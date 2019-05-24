@@ -1,6 +1,6 @@
 /* Vendor imports */
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -9,9 +9,9 @@ import {
   TumblrShareButton,
   RedditShareButton,
   WhatsappShareButton,
-  EmailShareButton,
-} from 'react-share'
-import { IconContext } from 'react-icons'
+  EmailShareButton
+} from "react-share";
+import { IconContext } from "react-icons";
 import {
   FaFacebookSquare,
   FaTwitterSquare,
@@ -20,9 +20,9 @@ import {
   FaTumblrSquare,
   FaRedditSquare,
   FaWhatsappSquare,
-  FaEnvelopeSquare,
-} from 'react-icons/fa'
-import style from './share.module.less'
+  FaEnvelopeSquare
+} from "react-icons/fa";
+import style from "./share.module.less";
 
 const Share = ({ pageCanonicalUrl, title, description, tags, coverUrl }) => (
   <div>
@@ -72,14 +72,14 @@ const Share = ({ pageCanonicalUrl, title, description, tags, coverUrl }) => (
       </div>
     </IconContext.Provider>
   </div>
-)
+);
 
 Share.propTypes = {
   pageCanonicalUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-  coverUrl: PropTypes.string.isRequired,
-}
+  coverUrl: PropTypes.string.isRequired
+};
 
-export default Share
+export default Share;

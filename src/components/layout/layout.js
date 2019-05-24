@@ -1,11 +1,11 @@
 /* Vendor imports */
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 /* App imports */
-import Header from './header'
-import Footer from './footer'
-import '../../style/global.less'
-import style from './layout.module.less'
+import Header from "./header";
+import Footer from "./footer";
+import "../../style/global.less";
+import style from "./layout.module.less";
 
 const Layout = ({ children, title }) => (
   <>
@@ -20,15 +20,15 @@ const Layout = ({ children, title }) => (
     </div>
     <Footer />
   </>
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string,
-}
+  title: PropTypes.string
+};
 
 Layout.defaultProps = {
-  title: '',
-}
+  title: ""
+};
 
-export default Layout
+export default Layout;

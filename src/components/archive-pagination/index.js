@@ -1,1 +1,1 @@
-export { default } from './archive-pagination.js'
+export { default } from "./archive-pagination.js";

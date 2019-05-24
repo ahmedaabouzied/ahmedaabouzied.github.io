@@ -1,58 +1,58 @@
 /* Vendor imports */
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaRss } from 'react-icons/fa'
+import React, { Component } from "react";
+import { Link } from "gatsby";
+import { FaBars, FaTimes, FaGithub, FaLinkedin, FaRss } from "react-icons/fa";
 /* App imports */
-import style from './header.module.less'
-import Config from '../../../../config'
-import Utils from '../../../utils'
+import style from "./header.module.less";
+import Config from "../../../../config";
+import Utils from "../../../utils";
 
 class Header extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       lastScrollY: 0,
       fixedHeader: false,
-      collapsedMenu: true,
-    }
-    this.toggleFixedHeader = this.toggleFixedHeader.bind(this)
-    this.toggleMenu = this.toggleMenu.bind(this)
+      collapsedMenu: true
+    };
+    this.toggleFixedHeader = this.toggleFixedHeader.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.toggleFixedHeader)
+    window.addEventListener("scroll", this.toggleFixedHeader);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.toggleFixedHeader)
+    window.removeEventListener("scroll", this.toggleFixedHeader);
   }
 
   toggleFixedHeader() {
     if (!this.toggleFixedHeader.animationInProgress) {
-      this.toggleFixedHeader.animationInProgress = true
+      this.toggleFixedHeader.animationInProgress = true;
       setTimeout(() => {
         this.setState(
           {
             lastScrollY: window.scrollY,
             fixedHeader:
-              window.scrollY > 100 && this.state.lastScrollY < window.scrollY,
+              window.scrollY > 100 && this.state.lastScrollY < window.scrollY
           },
           () => (this.toggleFixedHeader.animationInProgress = false)
-        )
-      }, 200)
+        );
+      }, 200);
     }
   }
 
   toggleMenu() {
     this.setState({
-      collapsedMenu: !this.state.collapsedMenu,
-    })
+      collapsedMenu: !this.state.collapsedMenu
+    });
   }
 
   render = () => (
     <div
       className={style.container}
-      style={this.state.fixedHeader ? { backgroundImage: 'none' } : null}
+      style={this.state.fixedHeader ? { backgroundImage: "none" } : null}
     >
       <div className={style.titleContainer}>
         <div className={style.title}>
@@ -80,8 +80,8 @@ class Header extends Component {
       <div
         className={[
           style.list,
-          this.state.collapsedMenu ? style.collapsedMenu : style.expandedMenu,
-        ].join(' ')}
+          this.state.collapsedMenu ? style.collapsedMenu : style.expandedMenu
+        ].join(" ")}
       >
         <ul>
           <li>
@@ -121,7 +121,7 @@ class Header extends Component {
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

@@ -1,17 +1,17 @@
 /* Vendor imports */
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
 /* App imports */
-import style from './post-list.module.less'
-import TagList from '../tag-list'
-import Utils from '../../utils'
+import style from "./post-list.module.less";
+import TagList from "../tag-list";
+import Utils from "../../utils";
 
 const PostList = ({ posts }) => (
   <div className={style.container}>
     {posts.map((post, index) => {
-      const { title, date, path, tags, cover, excerpt } = post.node.frontmatter
+      const { title, date, path, tags, cover, excerpt } = post.node.frontmatter;
       return (
         <div key={title} className={style.post}>
           {/* <div className={style.cover}>
@@ -32,10 +32,10 @@ const PostList = ({ posts }) => (
             <TagList tags={tags} />
           </div>
         </div>
-      )
+      );
     })}
   </div>
-)
+);
 
 PostList.propTypes = {
   posts: PropTypes.arrayOf(
@@ -48,13 +48,13 @@ PostList.propTypes = {
           tags: PropTypes.arrayOf(PropTypes.string).isRequired,
           cover: PropTypes.shape({
             childImageSharp: PropTypes.shape({
-              fluid: PropTypes.object.isRequired,
-            }).isRequired,
-          }).isRequired,
-        }),
-      }),
+              fluid: PropTypes.object.isRequired
+            }).isRequired
+          }).isRequired
+        })
+      })
     })
-  ),
-}
+  )
+};
 
-export default PostList
+export default PostList;

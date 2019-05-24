@@ -1,12 +1,12 @@
 /* Vendor imports */
-import React from 'react'
-import PropTypes from 'prop-types'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import React from "react";
+import PropTypes from "prop-types";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 /* App imports */
-import Button from '../../components/button'
-import Config from '../../../config'
-import Utils from '../../utils'
-import style from './archive-pagination.module.less'
+import Button from "../../components/button";
+import Config from "../../../config";
+import Utils from "../../utils";
+import style from "./archive-pagination.module.less";
 
 const ArchivePagination = ({ prevPage, nextPage }) => (
   <div className={style.container}>
@@ -29,11 +29,11 @@ const ArchivePagination = ({ prevPage, nextPage }) => (
       </Button>
     ) : null}
   </div>
-)
+);
 
 ArchivePagination.propTypes = {
   prevPage: PropTypes.number,
-  nextPage: PropTypes.number,
-}
+  nextPage: PropTypes.number
+};
 
-export default ArchivePagination
+export default ArchivePagination;

@@ -1,22 +1,22 @@
 /* Vendor imports */
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
 /* App imports */
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
-import PostList from '../../components/post-list'
-import style from './tag.module.less'
-import Config from '../../../config'
-import Utils from '../../utils'
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import PostList from "../../components/post-list";
+import style from "./tag.module.less";
+import Config from "../../../config";
+import Utils from "../../utils";
 
 const TagPage = ({ data, pageContext }) => {
-  const tag = pageContext.tag
-  const tagName = Config.tags[tag].name || Utils.capitalize(tag)
-  const tagPagePath = Config.pages.tag
+  const tag = pageContext.tag;
+  const tagName = Config.tags[tag].name || Utils.capitalize(tag);
+  const tagPagePath = Config.pages.tag;
   const tagImage = data.allFile.edges.find(edge => edge.node.name === tag).node
-    .childImageSharp.fluid
+    .childImageSharp.fluid;
 
   return (
     <Layout>
@@ -36,13 +36,13 @@ const TagPage = ({ data, pageContext }) => {
       </div>
       <PostList posts={data.allMarkdownRemark.edges} />
     </Layout>
-  )
-}
+  );
+};
 
 TagPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.object).isRequired,
+      edges: PropTypes.arrayOf(PropTypes.object).isRequired
     }).isRequired,
     allFile: PropTypes.shape({
       edges: PropTypes.arrayOf(
@@ -50,17 +50,17 @@ TagPage.propTypes = {
           node: PropTypes.shape({
             name: PropTypes.string.isRequired,
             childImageSharp: PropTypes.shape({
-              fluid: PropTypes.object.isRequired,
-            }).isRequired,
-          }).isRequired,
+              fluid: PropTypes.object.isRequired
+            }).isRequired
+          }).isRequired
         })
-      ).isRequired,
-    }).isRequired,
+      ).isRequired
+    }).isRequired
   }).isRequired,
   pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }).isRequired,
-}
+    tag: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export const pageQuery = graphql`
   query($tag: String!) {
@@ -103,6 +103,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default TagPage
+export default TagPage;

@@ -1,36 +1,36 @@
 /* Vendor imports */
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react";
+import { graphql } from "gatsby";
 /* App imports */
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
-import Heading from './heading'
-import ArticleHeading from './article-heading'
-import Article from './article'
-import Comments from './comments'
-import Share from './share'
-import SuggestedPosts from './suggested-posts'
-import Config from '../../../config'
-import Utils from '../../utils'
-import style from './post.module.less'
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import Heading from "./heading";
+import ArticleHeading from "./article-heading";
+import Article from "./article";
+import Comments from "./comments";
+import Share from "./share";
+import SuggestedPosts from "./suggested-posts";
+import Config from "../../../config";
+import Utils from "../../utils";
+import style from "./post.module.less";
 
 const Post = ({ data, pageContext }) => {
-  const { html, frontmatter, timeToRead } = data.markdownRemark
-  const { title, date, tags, cover, path, excerpt } = frontmatter
+  const { html, frontmatter, timeToRead } = data.markdownRemark;
+  const { title, date, tags, cover, path, excerpt } = frontmatter;
   const translations =
-    pageContext.translations.length > 1 ? pageContext.translations : null
-  const img = cover.childImageSharp.fluid
+    pageContext.translations.length > 1 ? pageContext.translations : null;
+  const img = cover.childImageSharp.fluid;
   const canonicalUrl = Utils.resolvePageUrl(
     Config.siteUrl,
     Config.pathPrefix,
     path
-  )
-  const coverUrl = Utils.resolveUrl(Config.siteUrl, img.src)
+  );
+  const coverUrl = Utils.resolveUrl(Config.siteUrl, img.src);
   const suggestedPosts = Utils.getSuggestedPosts(
     data.markdownRemark,
     data.allMarkdownRemark,
     3
-  )
+  );
 
   return (
     <Layout>
@@ -65,8 +65,8 @@ const Post = ({ data, pageContext }) => {
         <Comments pageCanonicalUrl={canonicalUrl} pageId={title} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query($postPath: String!) {
@@ -113,5 +113,5 @@ export const pageQuery = graphql`
       }
     }
   }
-`
-export default Post
+`;
+export default Post;

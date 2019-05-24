@@ -1,15 +1,15 @@
 /* Vendor imports */
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Image from "gatsby-image";
 /* App imports */
-import style from './404.module.less'
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
-import Button from '../../components/button'
-import Config from '../../../config'
-import Utils from '../../utils'
+import style from "./404.module.less";
+import Layout from "../../components/layout";
+import SEO from "../../components/seo";
+import Button from "../../components/button";
+import Config from "../../../config";
+import Utils from "../../utils";
 
 const NotFoundPage = ({ data }) => (
   <Layout>
@@ -17,7 +17,7 @@ const NotFoundPage = ({ data }) => (
       title="404: Page not found"
       description="404 Page"
       path="404"
-      keywords={['javascript', 'frontend', 'blog']}
+      keywords={["javascript", "frontend", "blog"]}
     />
     <div className={style.container}>
       <div className={style.image}>
@@ -31,17 +31,17 @@ const NotFoundPage = ({ data }) => (
       </div>
     </div>
   </Layout>
-)
+);
 
 NotFoundPage.propTypes = {
   data: PropTypes.shape({
     file: PropTypes.shape({
       childImageSharp: PropTypes.shape({
-        fluid: PropTypes.object.isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
-}
+        fluid: PropTypes.object.isRequired
+      }).isRequired
+    }).isRequired
+  }).isRequired
+};
 
 export const query = graphql`
   {
@@ -53,5 +53,5 @@ export const query = graphql`
       }
     }
   }
-`
-export default NotFoundPage
+`;
+export default NotFoundPage;

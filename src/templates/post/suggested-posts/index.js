@@ -1,1 +1,1 @@
-export { default } from './suggested-posts'
+export { default } from "./suggested-posts";
