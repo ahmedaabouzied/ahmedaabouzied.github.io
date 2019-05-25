@@ -26,8 +26,18 @@
     },
     {
         "componentChunkName": "component---src-templates-post-post-js",
+        "jsonName": "blog-go-modules-bd8",
+        "path": "/blog/go-modules"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-post-js",
         "jsonName": "blog-top-7-rxjs-patterns-902",
         "path": "/blog/top-7-rxjs-patterns"
+    },
+    {
+        "componentChunkName": "component---cache-dev-404-page-js",
+        "jsonName": "dev-404-page-5f9",
+        "path": "/dev-404-page/"
     },
     {
         "componentChunkName": "component---src-pages-tag-index-js",
