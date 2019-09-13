@@ -1,7 +1,7 @@
 module.exports = {
-  pathPrefix: "/trixeg",
+  pathPrefix: "/the-smoking-duck",
   siteUrl: "https://ahmedaabouzied.github.io",
-  siteTitle: "Trixeg",
+  siteTitle: "The Smoking Duck",
   siteDescription: "Software Developer Blog",
   author: "Ahmed Abouzied",
   postsForArchivePage: 3,
