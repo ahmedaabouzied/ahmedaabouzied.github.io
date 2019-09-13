@@ -16,16 +16,14 @@ import style from "./post.module.less";
 
 const Post = ({ data, pageContext }) => {
   const { html, frontmatter, timeToRead } = data.markdownRemark;
-  const { title, date, tags, cover, path, excerpt } = frontmatter;
+  const { title, date, tags, path, excerpt } = frontmatter;
   const translations =
     pageContext.translations.length > 1 ? pageContext.translations : null;
-  const img = cover.childImageSharp.fluid;
   const canonicalUrl = Utils.resolvePageUrl(
     Config.siteUrl,
     Config.pathPrefix,
     path
   );
-  const coverUrl = Utils.resolveUrl(Config.siteUrl, img.src);
   const suggestedPosts = Utils.getSuggestedPosts(
     data.markdownRemark,
     data.allMarkdownRemark,
@@ -39,12 +37,11 @@ const Post = ({ data, pageContext }) => {
         description={excerpt}
         path={path}
         contentType="article"
-        imageUrl={img.src}
         keywords={tags}
         translations={translations}
       />
       <div className={style.container}>
-        <Heading title={title} tags={tags} cover={img} coverTitle={excerpt} />
+        <Heading title={title} tags={tags} coverTitle={excerpt} />
         <div className={style.content}>
           <ArticleHeading
             excerpt={excerpt}
@@ -58,7 +55,7 @@ const Post = ({ data, pageContext }) => {
             title={title}
             description={excerpt}
             tags={tags}
-            coverUrl={coverUrl}
+            // coverUrl={coverUrl}
           />
         </div>
         <SuggestedPosts posts={suggestedPosts} />
@@ -79,13 +76,6 @@ export const pageQuery = graphql`
         tags
         path
         excerpt
-        cover {
-          childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
       }
     }
     allMarkdownRemark(
@@ -101,13 +91,6 @@ export const pageQuery = graphql`
             title
             tags
             excerpt
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
           }
         }
       }

@@ -2,7 +2,7 @@
 title: Cancel Propagation in Web Servers
 tags: [go]
 date: 2019-5-24T05:25:44.226Z
-path: blog/go-modules
+path: blog/cancel-propagation-in-web-servers
 cover: ./preview.png
 excerpt: Using the context package to propagate cancel events to save resource in web servers
 ---
@@ -163,8 +163,7 @@ func getNews(ctx context.Context, link string) ([]byte, error) {
 }
 ```
 
-
-### Full Code with helper functions and structs 
+### Full Code with helper functions and structs
 
 ```go
 package main

@@ -26,13 +26,13 @@
     },
     {
         "componentChunkName": "component---src-templates-post-post-js",
-        "jsonName": "blog-go-modules-bd8",
-        "path": "/blog/go-modules"
+        "jsonName": "blog-cancel-propagation-in-web-servers-64d",
+        "path": "/blog/cancel-propagation-in-web-servers"
     },
     {
         "componentChunkName": "component---src-templates-post-post-js",
-        "jsonName": "blog-top-7-rxjs-patterns-902",
-        "path": "/blog/top-7-rxjs-patterns"
+        "jsonName": "blog-memory-management-in-c-0ed",
+        "path": "/blog/memory-management-in-c++"
     },
     {
         "componentChunkName": "component---cache-dev-404-page-js",
@@ -43,6 +43,11 @@
         "componentChunkName": "component---src-pages-tag-index-js",
         "jsonName": "tag-af9",
         "path": "/tag/"
+    },
+    {
+        "componentChunkName": "component---src-templates-tag-tag-js",
+        "jsonName": "tag-c-ad0",
+        "path": "/tag/c++/"
     },
     {
         "componentChunkName": "component---src-templates-tag-tag-js",
