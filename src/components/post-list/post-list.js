@@ -2,7 +2,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import Img from "gatsby-image";
 /* App imports */
 import style from "./post-list.module.less";
 import TagList from "../tag-list";
@@ -11,18 +10,9 @@ import Utils from "../../utils";
 const PostList = ({ posts }) => (
   <div className={style.container}>
     {posts.map((post, index) => {
-      const { title, date, path, tags, cover, excerpt } = post.node.frontmatter;
+      const { title, date, path, tags, excerpt } = post.node.frontmatter;
       return (
         <div key={title} className={style.post}>
-          {/* <div className={style.cover}>
-            <Link to={Utils.resolvePageUrl(path)}>
-              <Img
-                fluid={cover.childImageSharp.fluid}
-                title={excerpt}
-                alt={title}
-              />
-            </Link>
-          </div> */}
           <div className={style.content}>
             <Link to={Utils.resolvePageUrl(path)}>
               {date ? <label>{date}</label> : null}

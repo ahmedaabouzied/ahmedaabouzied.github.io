@@ -26,6 +26,11 @@
     },
     {
         "componentChunkName": "component---src-templates-post-post-js",
+        "jsonName": "blog-box-blur-coding-problem-ef5",
+        "path": "/blog/box-blur-coding-problem"
+    },
+    {
+        "componentChunkName": "component---src-templates-post-post-js",
         "jsonName": "blog-cancel-propagation-in-web-servers-64d",
         "path": "/blog/cancel-propagation-in-web-servers"
     },
@@ -43,6 +48,11 @@
         "componentChunkName": "component---src-pages-tag-index-js",
         "jsonName": "tag-af9",
         "path": "/tag/"
+    },
+    {
+        "componentChunkName": "component---src-templates-tag-tag-js",
+        "jsonName": "tag-algorithms-a9d",
+        "path": "/tag/algorithms/"
     },
     {
         "componentChunkName": "component---src-templates-tag-tag-js",

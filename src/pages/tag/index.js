@@ -27,29 +27,23 @@ const Tag = ({ data }) => {
         path={tagPage}
       />
       <div>
-        {tags.map(tag => (
-          <Link
-            to={Utils.resolvePageUrl(tagPage, tag)}
-            className={style.card}
-            key={tag}
-          >
-            <div className={style.cover}>
-              <Image
-                fluid={
-                  data.allFile.edges.find(edge => edge.node.name === tag).node
-                    .childImageSharp.fluid
-                }
-              />
-            </div>
-            <div className={style.content}>
-              <h2>{Config.tags[tag].name || Utils.capitalize(tag)}</h2>
-              <p>{Config.tags[tag].description}</p>
-              <label>{`${
-                rawTags.filter(sTag => sTag === tag).length
-              } Posts`}</label>
-            </div>
-          </Link>
-        ))}
+        {tags.map(tag => {
+          return (
+            <Link
+              to={Utils.resolvePageUrl(tagPage, tag)}
+              className={style.card}
+              key={tag}
+            >
+              <div className={style.content}>
+                <h2>{Config.tags[tag].name || Utils.capitalize(tag)}</h2>
+                <p>{Config.tags[tag].description}</p>
+                <label>{`${
+                  rawTags.filter(sTag => sTag === tag).length
+                } Posts`}</label>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </Layout>
   );

@@ -1,7 +1,6 @@
 /* Vendor imports */
 import React from "react";
 import PropTypes from "prop-types";
-import Img from "gatsby-image";
 /* App imports */
 import TagList from "../../../components/tag-list";
 import style from "./heading.module.less";
@@ -12,9 +11,7 @@ const Heading = ({ title, tags, cover, coverTitle }) => (
       <h1>{title}</h1>
       <TagList tags={tags} />
     </div>
-    <div className={style.cover}>
-      {/* <Img fluid={cover} title={coverTitle} alt={title} /> */}
-    </div>
+    <div className={style.cover} />
   </div>
 );
 

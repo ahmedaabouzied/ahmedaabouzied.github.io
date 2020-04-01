@@ -1,12 +1,12 @@
 module.exports = {
   pathPrefix: "/the-smoking-duck",
-  siteUrl: "https://ahmedaabouzied.github.io",
+  siteUrl: "https://blog.ahmedaabouzied.com",
   siteTitle: "The Smoking Duck",
   siteDescription: "Software Developer Blog",
   author: "Ahmed Abouzied",
   postsForArchivePage: 3,
   defaultLanguage: "en",
-  disqusScript: "https://ahmedaabouzied.github.com/embed.js",
+  disqusScript: "https://blog.ahmedaabouzied.com/embed.js",
   pages: {
     home: "/",
     blog: "blog",
@@ -27,6 +27,10 @@ module.exports = {
     "c++": {
       name: "C++",
       description: "C++ Programming Language."
+    },
+    algorithms: {
+      name: "Algorithms",
+      description: "Solving coding challenges"
     }
   }
 };
