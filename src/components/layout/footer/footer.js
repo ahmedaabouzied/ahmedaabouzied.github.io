@@ -5,7 +5,7 @@ import style from "./footer.module.less";
 
 const Footer = () => (
   <div className={style.container}>
-    <p>Copyrights &copy; Trixeg Blog 2019</p>
+    <p>Copyrights &copy; The Smoking Duck Blog 2020</p>
   </div>
 );
 
