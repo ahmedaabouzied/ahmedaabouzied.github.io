@@ -1,7 +1,7 @@
 ---
 title: Box Blur Coding Challenge
 tags: [c++, algorithms]
-date: 2019-9-13T05:25:44.226Z
+date: 2020-4-1T05:25:44.226Z
 path: blog/box-blur-coding-problem
 cover: ./preview.png
 excerpt: Solving the box blur coding challenge on CodeSignal.
