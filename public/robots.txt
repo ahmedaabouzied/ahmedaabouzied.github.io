@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://ahmedaabouzied.github.io/sitemap.xml
-Host: https://ahmedaabouzied.github.io
