@@ -31,8 +31,6 @@ minesweeper(matrix) = [[1, 2, 1],
                        [1, 1, 1]]
 ```
 
-![Minesweaper example](https://codesignal.s3.amazonaws.com/tasks/minesweeper/img/example.png?_tm=1582043430722)
-
 ## Solution:
 
 ```cpp

@@ -74,13 +74,6 @@ export const pageQuery = graphql`
             path
             tags
             excerpt
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
           }
         }
       }

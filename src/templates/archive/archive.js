@@ -56,13 +56,6 @@ export const query = graphql`
             tags
             date(formatString: "MMMM DD, YYYY")
             excerpt
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
           }
         }
       }
