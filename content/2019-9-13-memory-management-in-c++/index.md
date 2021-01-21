@@ -1,6 +1,5 @@
 ---
 title: Memory Management in C++
-tags: [c++]
 date: 2019-9-13T05:25:44.226Z
 path: blog/memory-management-in-c++
 cover: ./preview.png

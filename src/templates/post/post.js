@@ -7,16 +7,14 @@ import SEO from "../../components/seo";
 import Heading from "./heading";
 import ArticleHeading from "./article-heading";
 import Article from "./article";
-import Comments from "./comments";
 import Share from "./share";
-import SuggestedPosts from "./suggested-posts";
 import Config from "../../../config";
 import Utils from "../../utils";
 import style from "./post.module.less";
 
 const Post = ({ data, pageContext }) => {
   const { html, frontmatter, timeToRead } = data.markdownRemark;
-  const { title, date, tags, path, excerpt } = frontmatter;
+  const { title, date,  path, excerpt } = frontmatter;
   const translations =
     pageContext.translations.length > 1 ? pageContext.translations : null;
   const canonicalUrl = Utils.resolvePageUrl(
@@ -24,12 +22,7 @@ const Post = ({ data, pageContext }) => {
     Config.pathPrefix,
     path
   );
-  const suggestedPosts = Utils.getSuggestedPosts(
-    data.markdownRemark,
-    data.allMarkdownRemark,
-    3
-  );
-
+  
   return (
     <Layout>
       <SEO
@@ -37,11 +30,10 @@ const Post = ({ data, pageContext }) => {
         description={excerpt}
         path={path}
         contentType="article"
-        keywords={tags}
         translations={translations}
       />
       <div className={style.container}>
-        <Heading title={title} tags={tags} coverTitle={excerpt} />
+        <Heading title={title} coverTitle={excerpt} />
         <div className={style.content}>
           <ArticleHeading
             excerpt={excerpt}
@@ -54,12 +46,8 @@ const Post = ({ data, pageContext }) => {
             pageCanonicalUrl={canonicalUrl}
             title={title}
             description={excerpt}
-            tags={tags}
-            // coverUrl={coverUrl}
           />
         </div>
-        <SuggestedPosts posts={suggestedPosts} />
-        <Comments pageCanonicalUrl={canonicalUrl} pageId={title} />
       </div>
     </Layout>
   );
@@ -73,7 +61,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "DD MMM YYYY")
-        tags
         path
         excerpt
       }
@@ -89,7 +76,6 @@ export const pageQuery = graphql`
           frontmatter {
             path
             title
-            tags
             excerpt
           }
         }

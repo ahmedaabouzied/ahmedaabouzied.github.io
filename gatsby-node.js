@@ -15,7 +15,6 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             frontmatter {
               path
-              tags
             }
             fileAbsolutePath
           }
@@ -45,25 +44,6 @@ exports.createPages = ({ actions, graphql }) => {
     const regexForIndex = /index\.md$/
     // Posts in default language, excluded the translated versions
     const defaultPosts = allMarkdownRemark.edges.filter(({ node: { fileAbsolutePath } }) => fileAbsolutePath.match(regexForIndex))
-
-    /* Tag pages */
-    const allTags = [];
-    defaultPosts.forEach(({ node }) => {
-      node.frontmatter.tags.forEach(tag => {
-        if (allTags.indexOf(tag) === -1) allTags.push(tag)
-      })
-    })
-
-    allTags
-    .forEach(tag => {
-      createPage({
-        path: utils.resolvePageUrl(config.pages.tag, tag),
-        component: path.resolve('src/templates/tag/tag.js'),
-        context: {
-          tag: tag
-        }
-      })
-    })
 
     /* Archive pages */
     const postsForPage = config.postsForArchivePage;

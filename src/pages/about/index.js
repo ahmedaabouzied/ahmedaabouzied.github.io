@@ -23,51 +23,7 @@ const About = ({ data: { profilePhoto, skillIcons, toolIcons } }) => {
         </div>
         <div className={style.content}>
           <h1>Ahmed Abouzied</h1>
-          <h2>Software Developer</h2>
-          <p>
-            I am a full stack developer . with very good experience in
-            developing both Front-end , Back-end applications and Mobile
-            applications for android.
-          </p>
-          <p>
-            I studied many courses and worked through many books in back-end
-            development , database systems , front-end frameworks and algorithms
-            and data structures.
-          </p>
-          <p>
-            I have very experience with the following programming languages : C
-            / C++ , Go , Javascript / NodeJs , Dart , Python , Java , PHP
-          </p>
-          <p>
-            I am very familiar with these front-end frameworks : Angular , React
-            , VueJs
-          </p>
-          <p>
-            And these back-end frameworks and utilities : Node , express ,
-            Flutter(for building mobile applications) , the android platform ,
-            Gin / Mux (Golang web server frameworks) , Laravel , websockets.
-          </p>
-          <p>
-            I use docker , containers , Kubernetes to deploy the web
-            applications to the production server.
-          </p>
-          <p>
-            I also know how to operate these databases and integrate them into
-            web / mobile applications : MySQL , SQLlite , PostgreSQL , Mongodb
-          </p>
-          <p>
-            I am also familiar with DNS , FTP , Apache web server , Nginx web
-            server.
-          </p>
-          <p>
-            I have worked on many front end , back end , android and full stack
-            projects using every technology mentioned earlier.
-          </p>
-          <br />
-          {/* <h2>Skills</h2>
-          <ImageList edges={skillIcons.edges} />
-          <h2>Tools</h2>
-          <ImageList edges={toolIcons.edges} /> */}
+            <p>I'm a self taught software engineer. Currently I work at <a href="https://stocktwits.com">Stocktwits</a>. I write about Go, Rust, problem solving and sometimes I just write my thoughts on something whether technical or not.</p>
         </div>
       </div>
     </Layout>

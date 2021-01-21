@@ -4,13 +4,12 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 /* App imports */
 import style from "./post-list.module.less";
-import TagList from "../tag-list";
 import Utils from "../../utils";
 
 const PostList = ({ posts }) => (
   <div className={style.container}>
     {posts.map((post, index) => {
-      const { title, date, path, tags, excerpt } = post.node.frontmatter;
+      const { title, date, path, excerpt } = post.node.frontmatter;
       return (
         <div key={title} className={style.post}>
           <div className={style.content}>
@@ -19,7 +18,6 @@ const PostList = ({ posts }) => (
               <h2>{title}</h2>
               <p>{excerpt}</p>
             </Link>
-            <TagList tags={tags} />
           </div>
         </div>
       );
@@ -35,7 +33,6 @@ PostList.propTypes = {
           title: PropTypes.string.isRequired,
           date: PropTypes.string,
           path: PropTypes.string.isRequired,
-          tags: PropTypes.arrayOf(PropTypes.string).isRequired,
           cover: PropTypes.shape({
             childImageSharp: PropTypes.shape({
               fluid: PropTypes.object.isRequired

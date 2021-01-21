@@ -2,14 +2,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 /* App imports */
-import TagList from "../../../components/tag-list";
 import style from "./heading.module.less";
 
-const Heading = ({ title, tags, cover, coverTitle }) => (
+const Heading = ({ title, cover, coverTitle }) => (
   <div className={style.header}>
     <div className={style.title}>
       <h1>{title}</h1>
-      <TagList tags={tags} />
     </div>
     <div className={style.cover} />
   </div>

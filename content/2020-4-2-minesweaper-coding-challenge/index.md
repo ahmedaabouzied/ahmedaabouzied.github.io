@@ -1,6 +1,5 @@
 ---
 title: Minesweeper Coding Challenge
-tags: [c++, algorithms]
 date: 2020-4-2T05:25:44.226Z
 path: blog/minesweaper-coding-challenge
 cover: ./preview.png

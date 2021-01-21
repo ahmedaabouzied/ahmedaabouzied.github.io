@@ -88,9 +88,6 @@ class Header extends Component {
             <Link to={Utils.resolvePageUrl(Config.pages.home)}>Home</Link>
           </li>
           <li>
-            <Link to={Utils.resolvePageUrl(Config.pages.tag)}>Tags</Link>
-          </li>
-          <li>
             <Link to={Utils.resolvePageUrl(Config.pages.about)}>About</Link>
           </li>
         </ul>

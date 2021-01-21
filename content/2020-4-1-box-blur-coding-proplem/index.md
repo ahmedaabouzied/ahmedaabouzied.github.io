@@ -1,6 +1,5 @@
 ---
 title: Box Blur Coding Challenge
-tags: [c++, algorithms]
 date: 2020-4-1T05:25:44.226Z
 path: blog/box-blur-coding-problem
 cover: ./preview.png

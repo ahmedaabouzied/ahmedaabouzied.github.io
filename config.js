@@ -16,21 +16,7 @@ module.exports = {
   },
   social: {
     github: "https://github.com/ahmedaabouzied",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/ahmedaabouzied",
     rss: "/rss.xml"
-  },
-  tags: {
-    go: {
-      name: "Golang",
-      description: "Go Programming Language."
-    },
-    "c++": {
-      name: "C++",
-      description: "C++ Programming Language."
-    },
-    algorithms: {
-      name: "Algorithms",
-      description: "Solving coding challenges"
-    }
   }
 };
