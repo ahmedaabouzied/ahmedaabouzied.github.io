@@ -4,6 +4,8 @@ baseURL = "https://blog.aabouzied.com"
 # The name of this wonderful theme ;-).
 theme = 'hugo-bearblog'
 
+googleAnalytics = 'UA-162432082-1'
+
 # Basic metadata configuration for your blog.
 title = "The Smoking Duck Blog"
 author = "Ahmed Abouzied <email@aabouzied.com"
