@@ -1,6 +1,6 @@
 +++
 title = "On the memory of a song"
-date = 2021-04-26T01:00:000Z
+date = 2021-04-26T01:00:00.226Z
 description = "Just a situation to show what an idiot I am when it comes to being social"
 
 tags = ["personal", "music"]
