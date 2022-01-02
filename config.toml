@@ -56,5 +56,5 @@ ignoreErrors = ["error-disable-taxonomy"]
     lineNos = false
     lineNumbersInTable = true
     noClasses = true
-    style = "friendly"
+    style = "dracula"
     tabWidth = 4
