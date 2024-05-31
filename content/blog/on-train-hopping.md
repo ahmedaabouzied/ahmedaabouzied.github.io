@@ -13,7 +13,7 @@ I have had this trip in mind since I was in college in Egypt. The trip would be 
 
 I planned the trip to go through 6 countries. I live in Berlin from where I shall start. The plan goes as:
 
-```
+```mermaid
 Berlin              --> Amsterdam 
 Amsterdam           --> Bruxelles 
 Bruxells Central    --> Paris 
