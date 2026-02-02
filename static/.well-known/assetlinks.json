@@ -1,14 +1,27 @@
-[
-  {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.example.deeplinktester",
-      "sha256_cert_fingerprints": [
-        "12:E2:8B:90:4D:0A:EA:75:A6:FE:9A:1F:F0:9D:C9:75:52:D1:66:41:71:3F:E5:8F:51:DF:3D:2E:63:4E:1A:3A"
-      ]
+ [
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.example.aaltester",
+        "sha256_cert_fingerprints": [
+          "88:47:4B:6D:7C:70:5C:2E:5E:57:C0:B3:3E:BB:66:07:01:5D:58:5B:C6:A3:82:A0:3E:DA:27:F7:51:55:1F:91"
+        ]
+      },
+      "relation_extensions": {
+        "delegate_permission/common.handle_all_urls": {
+          "dynamic_app_link_components": [
+            {
+              "/": "/w/*",
+              "exclude": true
+            },
+            {
+              "/": "*"
+            }
+          ]
+        }
+      }
     }
-  }
-]
+  ]
