@@ -10,7 +10,7 @@ googleAnalytics = 'UA-162432082-1'
 title = "The Smoking Duck Blog"
 author = "Ahmed Abouzied <email@aabouzied.com"
 copyright = "Copyright © 2021, Ahmed Abouzied."
-languageCode = "en-US"
+locale = "en-US"
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true

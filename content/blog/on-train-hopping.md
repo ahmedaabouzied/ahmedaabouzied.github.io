@@ -14,17 +14,18 @@ I have had this trip in mind since I was in college in Egypt. The trip would be 
 I planned the trip to go through 6 countries. I live in Berlin from where I shall start. The plan goes as:
 
 ```mermaid
-Berlin              --> Amsterdam 
-Amsterdam           --> Bruxelles 
-Bruxells Central    --> Paris 
-Paris Austerlitz    --> Nice Ville
-Nice Ville          --> Ventimiglia
-Ventimiglia         --> Genova
-Genova              --> Rome
-Rome                --> Venice Santa Lucia
-Venice              --> Milano
-Milano              --> Zürich
-Zürich              --> Hannover
-Hannover            --> Back to Berlin
+flowchart TD
+    berlin[Berlin] --> amsterdam[Amsterdam]
+    amsterdam --> bruxelles[Bruxelles Central]
+    bruxelles --> paris[Paris Austerlitz]
+    paris --> nice[Nice Ville]
+    nice --> ventimiglia[Ventimiglia]
+    ventimiglia --> genova[Genova]
+    genova --> rome[Rome]
+    rome --> venice[Venice Santa Lucia]
+    venice --> milano[Milano]
+    milano --> zurich[Zürich]
+    zurich --> hannover[Hannover]
+    hannover --> berlin
 ```
 

@@ -2,6 +2,10 @@
 title: On Memory Management in C++
 date: 2019-09-13T05:25:44.226Z
 description: A deeper look into memory management in c++.
+# Pins the URL this post has been published at since 2019. Newer Hugo derives
+# "on-memory-management-in-c" from the title, dropping the trailing hyphen.
+# Must be `url` rather than `slug` -- slug is sanitized and loses the hyphen too.
+url: /on-memory-management-in-c-/
 ---
 
 ## Overview
