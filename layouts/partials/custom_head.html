@@ -8,3 +8,9 @@
   gtag('config', 'UA-162432082-1');
 </script>
 
+{{- if .Params.rtl }}
+<style>
+  main { direction: rtl; }
+</style>
+{{- end }}
+
