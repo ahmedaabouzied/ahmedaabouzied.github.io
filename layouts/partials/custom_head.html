@@ -8,9 +8,11 @@
   gtag('config', 'UA-162432082-1');
 </script>
 
-{{- if .Params.rtl }}
+{{- /* Arabic posts: flip the content column to right-to-left. */ -}}
+{{- if or .Params.rtl (findRE `[\x{0600}-\x{06FF}]` .Title) }}
 <style>
-  main { direction: rtl; }
+  main { direction: rtl; text-align: right; }
+  main pre, main code { direction: ltr; text-align: left; }
 </style>
 {{- end }}
 

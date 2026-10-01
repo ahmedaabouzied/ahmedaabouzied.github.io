@@ -4,7 +4,6 @@ date = "2026-10-01T22:05:00+02:00"
 slug = "the-new-dark-ages"
 description = "عن كتاب The New Dark Ages لجيمس ماريوت، وعن الفيديوهات القصيرة اللي بتاكل قدرتنا على القراءة والفهم."
 tags = ["personal", "reading", "arabic"]
-rtl = true
 +++
 
 ## الكتاب
