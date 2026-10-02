@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <base href="../">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ebe3cf">
 <title>Norwegian Fjord · Inktober 2027</title>
 <meta name="description" content="Sheer walls, white waterfalls, a red fishing hut, a ferry the size of a thumb.">
 <link rel="canonical" href="https://blog.aabouzied.com/inktober-2027/fjord/">
@@ -21,7 +22,8 @@
 <meta name="twitter:image" content="https://blog.aabouzied.com/inktober-2027/og/fjord.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!-- fonts load without blocking the first paint: the paper and the first strokes come first -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
 <style>
 /* Layout: one scene fills the screen and scrolls sideways; a slim title strip on top, an object inspector that slides in on demand. */
 :root{
@@ -34,8 +36,8 @@
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:light;
 }
-html,body{height:100%;margin:0;overflow:hidden}
-body{background:var(--paper);color:var(--ink);font-family:var(--mono)}
+html,body{height:100%;margin:0;overflow:hidden;background:var(--paper)}
+body{color:var(--ink);font-family:var(--mono)}
 #scroller{position:fixed;inset:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent;cursor:grab}
 #scroller.drag{cursor:grabbing}
 .vista-strip{background-repeat:repeat}

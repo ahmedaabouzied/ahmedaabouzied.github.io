@@ -42,19 +42,7 @@ export function paperTexture(base = '#ebe3cf', size = 360) {
 
 const TILE = 768;   // css px per tile
 const MARGIN = 64;  // css px painted past each tile edge, then cropped (keeps seams clean)
-
-function paintTile(canvas, ex, i, s, dpr, cssH) {
-  const w = canvas.width, h = canvas.height;
-  const off = document.createElement('canvas');
-  off.width = w + 2 * MARGIN * dpr; off.height = h;
-  const ctx = off.getContext('2d');
-  const left = (i * TILE - MARGIN) / s;
-  ctx.setTransform(s * dpr, 0, 0, s * dpr, -left * s * dpr, 0);
-  renderRegion(ctx, ex, left, left + off.width / (s * dpr));
-  const tc = canvas.getContext('2d');
-  tc.clearRect(0, 0, w, h);
-  tc.drawImage(off, MARGIN * dpr, 0, w, h, 0, 0, w, h);
-}
+const REVEAL = 7.5; // seconds the whole scene takes to paint itself in, whatever it holds
 
 // Paint the whole scene into one canvas at a given pixel height (for exports and review).
 export function renderFull(scene, height = 700, { dpr = 1 } = {}) {
@@ -68,7 +56,8 @@ export function renderFull(scene, height = 700, { dpr = 1 } = {}) {
 }
 
 // Mount a scrolling panorama into `root` (which must have a height).
-// Options: debug (show object ids and boxes), onPick(obj) when a box is clicked.
+// Options: debug (show object ids and boxes), onPick(obj) when a box is clicked,
+// reveal (paint the objects in one by one, back to front), onRevealed() when that finishes.
 export function mount(root, scene, opts = {}) {
   root.innerHTML = '';
   const ex = expand(scene);
@@ -84,24 +73,58 @@ export function mount(root, scene, opts = {}) {
     cv.width = Math.round(cw * dpr); cv.height = Math.round(cssH * dpr);
     Object.assign(cv.style, { position: 'absolute', left: i * TILE + 'px', top: 0, width: cw + 'px', height: cssH + 'px' });
     strip.appendChild(cv);
-    tiles.push({ i, cv, done: false });
+    // Each tile keeps its offscreen: objects land in it in draw order, so erase and the
+    // lake's reflection see what came before them, whether painted at once or a slice at a time.
+    const off = document.createElement('canvas');
+    off.width = cv.width + 2 * MARGIN * dpr; off.height = cv.height;
+    const ctx = off.getContext('2d');
+    const left = (i * TILE - MARGIN) / s;
+    ctx.setTransform(s * dpr, 0, 0, s * dpr, -left * s * dpr, 0);
+    tiles.push({ i, cv, off, ctx, left, right: left + off.width / (s * dpr), done: false });
   }
-  const paint = t => { if (!t.done) { paintTile(t.cv, ex, t.i, s, dpr, cssH); t.done = true; } };
-  const visible = () => {
-    const a = root.scrollLeft, b = a + root.clientWidth;
-    return tiles.filter(t => t.i * TILE < b + TILE && (t.i + 1) * TILE > a - TILE);
+  // Paint the objects numbered [from, to) into the tile, then show it.
+  const paint = (t, from, to) => {
+    renderRegion(t.ctx, ex, t.left, t.right, { from, to });
+    const tc = t.cv.getContext('2d');
+    tc.clearRect(0, 0, t.cv.width, t.cv.height);
+    tc.drawImage(t.off, MARGIN * dpr, 0, t.cv.width, t.cv.height, 0, 0, t.cv.width, t.cv.height);
   };
-  visible().forEach(paint);
-  let timer = 0;
-  const later = () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      const next = visible().find(t => !t.done) || tiles.find(t => !t.done);
-      if (next) { paint(next); later(); }
-    }, 16);
-  };
-  root.addEventListener('scroll', () => { visible().forEach(paint); later(); }, { passive: true });
-  later();
+
+  if (opts.reveal && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Draw the picture the way it was painted: sky, far ridges, lake, trees, foreground.
+    // Pace by the clock, not by the frame, so a crowded scene and an empty one take the same time.
+    const count = ex.layers.reduce((n, L) => n + L.objects.length, 0);
+    let shown = 0, t0 = 0;
+    const step = now => {
+      if (!strip.isConnected) return;  // a later mount took over
+      if (!t0) t0 = now - 16;  // start the clock a frame back, so this first frame already paints
+      const next = Math.min(count, Math.ceil((now - t0) / 1000 * count / REVEAL));
+      if (next > shown) {
+        for (const t of tiles) paint(t, shown, next);  // every tile, so scrolling mid-reveal stays honest
+        shown = next;
+      }
+      if (shown < count) requestAnimationFrame(step);
+      else opts.onRevealed?.();
+    };
+    requestAnimationFrame(step);
+  } else {
+    const whole = t => { if (!t.done) { paint(t, 0, Infinity); t.done = true; } };
+    const visible = () => {
+      const a = root.scrollLeft, b = a + root.clientWidth;
+      return tiles.filter(t => t.i * TILE < b + TILE && (t.i + 1) * TILE > a - TILE);
+    };
+    visible().forEach(whole);
+    let timer = 0;
+    const later = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const next = visible().find(t => !t.done) || tiles.find(t => !t.done);
+        if (next) { whole(next); later(); }
+      }, 16);
+    };
+    root.addEventListener('scroll', () => { visible().forEach(whole); later(); }, { passive: true });
+    later();
+  }
 
   if (opts.debug) {
     const layer = document.createElement('div');

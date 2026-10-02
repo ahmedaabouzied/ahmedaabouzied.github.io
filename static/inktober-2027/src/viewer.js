@@ -7,6 +7,7 @@ const inspect = document.getElementById('inspect');
 const $ = id => document.getElementById(id);
 
 let scenes = [], current = null, scene = null, debug = false, view = null;
+let glideId = 0, glideOff = false;
 
 // A scene is released on its date, at midnight in the viewer's own time zone.
 const today = new Date(); today.setHours(0, 0, 0, 0);
@@ -36,21 +37,42 @@ async function open(id) {
   $('seal').replaceChildren(Object.assign(document.createElement('span'), { textContent: d ? MONTH[d.getMonth()] : 'seed' }), Object.assign(document.createElement('b'), { textContent: d ? d.getDate() : scene.seed }));
   const i = scenes.findIndex(s => s.id === id);
   $('prev').hidden = i <= 0; $('next').hidden = i >= scenes.length - 1;
-  document.documentElement.style.setProperty('--paper', scene.paper ?? '#ebe3cf');
+  const paper = scene.paper ?? '#ebe3cf';
+  document.documentElement.style.setProperty('--paper', paper);
+  document.querySelector('meta[name=theme-color]').content = paper;  // phone browser bars match the paper
   document.title = `${scene.name} · Inktober 2027`;
   // published pages live one per scene (../<id>/), the dev page routes by hash
   try { history.replaceState(null, '', document.body.dataset.scene ? new URL(id + '/', document.baseURI).href : '#' + id); } catch (e) { /* sandboxed */ }
   inspect.hidden = true;
   scroller.scrollLeft = 0;
-  draw(false);
+  glideOff = false;
+  draw(false, true);
 }
 
-function draw(keepScroll) {
+function draw(keepScroll, reveal) {
+  cancelAnimationFrame(glideId);
   const ratio = keepScroll && view ? scroller.scrollLeft / Math.max(1, view.width) : 0;
-  view = mount(scroller, scene, { debug, onPick: show });
-  const strip = scroller.firstElementChild;
-  strip.style.backgroundImage = `url(${paperTexture(scene.paper)})`;
+  const texture = paperTexture(scene.paper);  // ready before the first stroke lands, so paper comes first
+  view = mount(scroller, scene, { debug, reveal, onPick: show, onRevealed: glide });
+  scroller.firstElementChild.style.backgroundImage = `url(${texture})`;
   scroller.scrollLeft = ratio * view.width;
+}
+
+// When the scene has finished painting itself, it drifts right until it runs out of paper
+// or the reader touches it. A reader who asked for reduced motion gets no reveal, so no drift.
+const SPEED = 90;  // css px per second
+function glide() {
+  if (glideOff) return;
+  let t0 = 0, last = 0, pos = scroller.scrollLeft;
+  const step = now => {
+    if (!t0) t0 = last = now;
+    const max = scroller.scrollWidth - scroller.clientWidth;
+    pos += SPEED * Math.min(1, (now - t0) / 500) * (now - last) / 1000;  // half a second to come up to speed
+    last = now;
+    scroller.scrollLeft = Math.min(pos, max);
+    if (pos < max) glideId = requestAnimationFrame(step);
+  };
+  glideId = requestAnimationFrame(step);
 }
 
 function show(o) {
@@ -79,6 +101,10 @@ function show(o) {
   });
   $('close').addEventListener('click', () => { inspect.hidden = true; });
 }
+
+// the first touch of any kind ends the drift, for this scene
+for (const type of ['wheel', 'pointerdown', 'touchstart', 'keydown'])
+  addEventListener(type, () => { glideOff = true; cancelAnimationFrame(glideId); }, { passive: true, capture: true });
 
 // vertical wheel scrolls sideways; drag to pan
 scroller.addEventListener('wheel', e => {
