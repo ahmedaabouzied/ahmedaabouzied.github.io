@@ -16,17 +16,13 @@ const MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'O
 async function start() {
   const all = await (await fetch('scenes/index.json', { cache: 'no-store' })).json();
   scenes = all.filter(released);
-  for (const s of scenes) {
-    const b = document.createElement('button');
-    b.textContent = s.name; b.dataset.id = s.id;
-    b.addEventListener('click', () => open(s.id));
-    nav.appendChild(b);
-  }
   const dbg = document.createElement('button');
   dbg.id = 'debug'; dbg.textContent = 'Show objects'; dbg.setAttribute('aria-pressed', 'false');
   dbg.addEventListener('click', () => { debug = !debug; dbg.setAttribute('aria-pressed', String(debug)); if (!debug) inspect.hidden = true; draw(true); });
   nav.appendChild(dbg);
-  $('next').addEventListener('click', () => { const i = scenes.findIndex(s => s.id === current); if (i < scenes.length - 1) open(scenes[i + 1].id); });
+  const step = d => { const i = scenes.findIndex(s => s.id === current) + d; if (scenes[i]) open(scenes[i].id); };
+  $('prev').addEventListener('click', () => step(-1));
+  $('next').addEventListener('click', () => step(1));
   const want = document.body.dataset.scene ?? (location.hash || '').slice(1);
   await open(scenes.some(s => s.id === want) ? want : scenes[scenes.length - 1].id);
 }
@@ -34,12 +30,12 @@ async function start() {
 async function open(id) {
   current = id;
   scene = await loadScene(`scenes/${id}.json`);
-  for (const b of nav.querySelectorAll('button[data-id]')) b.setAttribute('aria-pressed', String(b.dataset.id === id));
   $('title').textContent = scene.name;
   $('desc').textContent = scene.description ?? '';
   const d = scene.date ? new Date(scene.date + 'T00:00') : null;
   $('seal').replaceChildren(Object.assign(document.createElement('span'), { textContent: d ? MONTH[d.getMonth()] : 'seed' }), Object.assign(document.createElement('b'), { textContent: d ? d.getDate() : scene.seed }));
-  $('next').hidden = scenes.findIndex(s => s.id === id) >= scenes.length - 1;
+  const i = scenes.findIndex(s => s.id === id);
+  $('prev').hidden = i <= 0; $('next').hidden = i >= scenes.length - 1;
   document.documentElement.style.setProperty('--paper', scene.paper ?? '#ebe3cf');
   document.title = `${scene.name} · Inktober 2027`;
   // published pages live one per scene (../<id>/), the dev page routes by hash
