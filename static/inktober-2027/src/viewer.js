@@ -27,7 +27,7 @@ async function start() {
   dbg.addEventListener('click', () => { debug = !debug; dbg.setAttribute('aria-pressed', String(debug)); if (!debug) inspect.hidden = true; draw(true); });
   nav.appendChild(dbg);
   $('next').addEventListener('click', () => { const i = scenes.findIndex(s => s.id === current); if (i < scenes.length - 1) open(scenes[i + 1].id); });
-  const want = (location.hash || '').slice(1);
+  const want = document.body.dataset.scene ?? (location.hash || '').slice(1);
   await open(scenes.some(s => s.id === want) ? want : scenes[scenes.length - 1].id);
 }
 
@@ -41,8 +41,9 @@ async function open(id) {
   $('seal').replaceChildren(Object.assign(document.createElement('span'), { textContent: d ? MONTH[d.getMonth()] : 'seed' }), Object.assign(document.createElement('b'), { textContent: d ? d.getDate() : scene.seed }));
   $('next').hidden = scenes.findIndex(s => s.id === id) >= scenes.length - 1;
   document.documentElement.style.setProperty('--paper', scene.paper ?? '#ebe3cf');
-  document.title = `${scene.name} · Vista`;
-  try { history.replaceState(null, '', '#' + id); } catch (e) { /* sandboxed */ }
+  document.title = `${scene.name} · Inktober 2027`;
+  // published pages live one per scene (../<id>/), the dev page routes by hash
+  try { history.replaceState(null, '', document.body.dataset.scene ? new URL(id + '/', document.baseURI).href : '#' + id); } catch (e) { /* sandboxed */ }
   inspect.hidden = true;
   scroller.scrollLeft = 0;
   draw(false);

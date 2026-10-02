@@ -2,8 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<base href="../">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vista Ink Scenes</title>
+<title>Highland Loch · Inktober 2027</title>
+<meta name="description" content="Bare hills over a still loch, a bothy, and a stag on the skyline.">
+<link rel="canonical" href="https://blog.aabouzied.com/inktober-2027/highlands/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Smoking Duck">
+<meta property="og:title" content="Highland Loch · Inktober 2027">
+<meta property="og:description" content="Bare hills over a still loch, a bothy, and a stag on the skyline.">
+<meta property="og:url" content="https://blog.aabouzied.com/inktober-2027/highlands/">
+<meta property="og:image" content="https://blog.aabouzied.com/inktober-2027/og/highlands.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Highland Loch · Inktober 2027">
+<meta name="twitter:description" content="Bare hills over a still loch, a bothy, and a stag on the skyline.">
+<meta name="twitter:image" content="https://blog.aabouzied.com/inktober-2027/og/highlands.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -34,6 +49,8 @@ h1{margin:0;font:400 clamp(28px,4vw,44px)/.95 var(--display);text-wrap:balance}
 nav{display:flex;flex-wrap:wrap;gap:6px;pointer-events:auto}
 button{font:500 11.5px/1 var(--mono);color:var(--ink);background:color-mix(in srgb,var(--paper) 78%,transparent);border:1px solid var(--line);border-radius:3px;padding:8px 10px;cursor:pointer;letter-spacing:.04em;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
 button:hover{border-color:var(--ink-soft)}
+.home{font:500 11.5px/1 var(--mono);color:var(--ink);text-decoration:none;padding:8px 10px;letter-spacing:.04em;border:1px solid transparent}
+.home:hover{text-decoration:underline}
 button:focus-visible{outline:2px solid var(--cinnabar);outline-offset:2px}
 button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .next{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 40px);z-index:3}
@@ -54,15 +71,15 @@ button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-colo
 @media (max-width:560px){.hint{display:none}.sub{max-width:24ch}}
 </style>
 </head>
-<body>
+<body data-scene="highlands">
 <div id="scroller" aria-label="Painted scene, scroll sideways"></div>
 <div class="vignette"></div>
 <header>
   <div class="mark">
     <div class="seal" id="seal"></div>
-    <div><h1 id="title">Vista</h1><p class="sub" id="desc">Scenes painted in math.</p></div>
+    <div><h1 id="title">Inktober 2027</h1><p class="sub" id="desc">Scenes painted in math.</p></div>
   </div>
-  <nav id="nav" aria-label="Scenes"></nav>
+  <nav id="nav" aria-label="Scenes"><a class="home" href="../">← Home</a></nav>
 </header>
 <div class="hint">Scroll or drag sideways</div>
 <button id="next" class="next" hidden>Next →</button>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Inktober 2027</title>
+<meta name="description" content="One ink-wash landscape a day, painted in math. No images, only formulas.">
+<link rel="canonical" href="https://blog.aabouzied.com/inktober-2027/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Smoking Duck">
+<meta property="og:title" content="Inktober 2027">
+<meta property="og:description" content="One ink-wash landscape a day, painted in math. No images, only formulas.">
+<meta property="og:url" content="https://blog.aabouzied.com/inktober-2027/">
+<meta property="og:image" content="https://blog.aabouzied.com/inktober-2027/og/alps-lake.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inktober 2027">
+<meta name="twitter:description" content="One ink-wash landscape a day, painted in math. No images, only formulas.">
+<meta name="twitter:image" content="https://blog.aabouzied.com/inktober-2027/og/alps-lake.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one scene fills the screen and scrolls sideways; a slim title strip on top, an object inspector that slides in on demand. */
+:root{
+  --paper:#ebe3cf;
+  --ink:#1d1a16;
+  --ink-soft:#5d554a;
+  --cinnabar:#b0392a;
+  --line:rgba(29,26,22,.22);
+  --display:"IM Fell English","Iowan Old Style",Georgia,serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+html,body{height:100%;margin:0;overflow:hidden}
+body{background:var(--paper);color:var(--ink);font-family:var(--mono)}
+#scroller{position:fixed;inset:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent;cursor:grab}
+#scroller.drag{cursor:grabbing}
+.vista-strip{background-repeat:repeat}
+.vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 58%,rgba(92,70,38,.14) 100%)}
+header{position:fixed;top:0;left:0;right:0;padding:calc(env(safe-area-inset-top,0px) + 18px) 16px 0;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start;justify-content:space-between;pointer-events:none}
+.mark{display:flex;gap:12px;align-items:flex-start}
+.seal{flex:none;width:44px;min-height:66px;padding:6px 0 4px;box-sizing:border-box;justify-content:center;border:2px solid var(--cinnabar);border-radius:3px;color:var(--cinnabar);font:500 10px/1 var(--mono);text-align:center;letter-spacing:.14em;text-transform:uppercase;opacity:.9;mix-blend-mode:multiply;display:flex;flex-direction:column;align-items:center;gap:6px}
+.seal b{font:500 24px/1 var(--mono);letter-spacing:0}
+h1{margin:0;font:400 clamp(28px,4vw,44px)/.95 var(--display);text-wrap:balance}
+.sub{margin:6px 0 0;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);max-width:34ch;line-height:1.5}
+nav{display:flex;flex-wrap:wrap;gap:6px;pointer-events:auto}
+button{font:500 11.5px/1 var(--mono);color:var(--ink);background:color-mix(in srgb,var(--paper) 78%,transparent);border:1px solid var(--line);border-radius:3px;padding:8px 10px;cursor:pointer;letter-spacing:.04em;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+button:hover{border-color:var(--ink-soft)}
+.home{font:500 11.5px/1 var(--mono);color:var(--ink);text-decoration:none;padding:8px 10px;letter-spacing:.04em;border:1px solid transparent}
+.home:hover{text-decoration:underline}
+button:focus-visible{outline:2px solid var(--cinnabar);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.next{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 40px);z-index:3}
+.next[hidden]{display:none}
+.hint{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);font-size:11px;color:var(--ink-soft);letter-spacing:.06em;pointer-events:none}
+.vista-box{position:absolute;border:1px solid rgba(176,57,42,.55);background:rgba(176,57,42,.03);padding:0;cursor:pointer;border-radius:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+.vista-box:hover{background:rgba(176,57,42,.1);border-color:var(--cinnabar);z-index:2}
+.vista-box span{position:absolute;left:2px;top:1px;font:500 9.5px/1 var(--mono);color:var(--cinnabar);white-space:nowrap;pointer-events:none}
+#inspect{position:fixed;left:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);width:min(360px,calc(100vw - 32px));background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px;box-shadow:0 8px 30px rgba(40,30,15,.12);display:grid;gap:10px}
+#inspect[hidden]{display:none}
+#inspect h2{margin:0;font:400 20px/1.1 var(--display);overflow-wrap:anywhere}
+#inspect dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:11.5px}
+#inspect dt{color:var(--ink-soft)}
+#inspect dd{margin:0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+#inspect pre{margin:0;padding:8px;background:color-mix(in srgb,var(--ink) 6%,transparent);border-radius:3px;font:11px/1.45 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere}
+#inspect .row{display:flex;flex-wrap:wrap;gap:6px}
+#inspect p{margin:0;font-size:11px;color:var(--ink-soft);line-height:1.5}
+@media (max-width:560px){.hint{display:none}.sub{max-width:24ch}}
+</style>
+</head>
+<body>
+<div id="scroller" aria-label="Painted scene, scroll sideways"></div>
+<div class="vignette"></div>
+<header>
+  <div class="mark">
+    <div class="seal" id="seal"></div>
+    <div><h1 id="title">Inktober 2027</h1><p class="sub" id="desc">Scenes painted in math.</p></div>
+  </div>
+  <nav id="nav" aria-label="Scenes"><a class="home" href="../">← Home</a></nav>
+</header>
+<div class="hint">Scroll or drag sideways</div>
+<button id="next" class="next" hidden>Next →</button>
+<section id="inspect" hidden aria-live="polite"></section>
+
+<script type="module" src="src/viewer.js"></script>
+</body>
+</html>
