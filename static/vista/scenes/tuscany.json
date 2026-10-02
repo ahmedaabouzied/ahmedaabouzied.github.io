@@ -1,0 +1,464 @@
+{
+ "name": "Tuscan Hills",
+ "description": "Ploughed ridges, a farmhouse on the crest, cypresses along the road.",
+ "date": "2026-10-07",
+ "seed": 1504,
+ "width": 4800,
+ "height": 1000,
+ "paper": "#efe6d2",
+ "palette": {
+  "ink": [
+   28,
+   24,
+   20
+  ],
+  "tint": [
+   150,
+   102,
+   58
+  ],
+  "accent": [
+   178,
+   76,
+   44
+  ]
+ },
+ "depth": {
+  "horizon": 540,
+  "near": 1000,
+  "sFar": 0.3,
+  "sNear": 1.3,
+  "power": 1.3
+ },
+ "layers": [
+  {
+   "id": "sky",
+   "sort": false,
+   "objects": [
+    {
+     "id": "sky.haze",
+     "type": "haze",
+     "y": 540,
+     "h": 180,
+     "alpha": 0.09
+    },
+    {
+     "id": "sky.sun",
+     "type": "sun",
+     "x": 3600,
+     "y": 300,
+     "r": 50,
+     "alpha": 0.07
+    },
+    {
+     "id": "sky.birds1",
+     "type": "birds",
+     "x": 1150,
+     "y": 230,
+     "n": 5,
+     "scale": 2.0
+    },
+    {
+     "id": "sky.birds2",
+     "type": "birds",
+     "x": 3950,
+     "y": 340,
+     "n": 4,
+     "scale": 1.7
+    },
+    {
+     "id": "sky.birds3",
+     "type": "birds",
+     "x": 2500,
+     "y": 180,
+     "n": 3,
+     "scale": 1.4
+    }
+   ]
+  },
+  {
+   "id": "farHills",
+   "sort": false,
+   "objects": [
+    {
+     "id": "farHills.a",
+     "type": "hill",
+     "x": 400,
+     "y": 565,
+     "width": 1600,
+     "height": 85,
+     "depth": 200,
+     "alpha": 0.3,
+     "furrows": 0.13,
+     "offset": 11
+    },
+    {
+     "id": "farHills.b",
+     "type": "hill",
+     "x": 1700,
+     "y": 565,
+     "width": 1700,
+     "height": 125,
+     "depth": 200,
+     "alpha": 0.3,
+     "furrows": 0.16,
+     "offset": 37
+    },
+    {
+     "id": "farHills.c",
+     "type": "hill",
+     "x": 3000,
+     "y": 565,
+     "width": 1500,
+     "height": 95,
+     "depth": 200,
+     "alpha": 0.3,
+     "furrows": 0.13,
+     "offset": 64
+    },
+    {
+     "id": "farHills.d",
+     "type": "hill",
+     "x": 4350,
+     "y": 565,
+     "width": 1700,
+     "height": 115,
+     "depth": 200,
+     "alpha": 0.3,
+     "furrows": 0.16,
+     "offset": 92
+    },
+    {
+     "id": "farHills.mist",
+     "type": "mist",
+     "y": 552,
+     "h": 30,
+     "strength": 0.42,
+     "offset": 5.3,
+     "wave": 380,
+     "patch": 0.25
+    }
+   ]
+  },
+  {
+   "id": "midHills",
+   "sort": false,
+   "objects": [
+    {
+     "id": "midHills.a",
+     "type": "hill",
+     "x": 250,
+     "y": 690,
+     "width": 1500,
+     "height": 130,
+     "depth": 330,
+     "alpha": 0.5,
+     "furrows": 0.5,
+     "offset": 120
+    },
+    {
+     "id": "midHills.b",
+     "type": "hill",
+     "x": 1450,
+     "y": 690,
+     "width": 1600,
+     "height": 165,
+     "depth": 330,
+     "alpha": 0.55,
+     "furrows": 0.55,
+     "offset": 151
+    },
+    {
+     "id": "midHills.c",
+     "type": "hill",
+     "x": 2550,
+     "y": 690,
+     "width": 1400,
+     "height": 125,
+     "depth": 330,
+     "alpha": 0.5,
+     "furrows": 0.45,
+     "offset": 183
+    },
+    {
+     "id": "midHills.d",
+     "type": "hill",
+     "x": 3600,
+     "y": 690,
+     "width": 1500,
+     "height": 150,
+     "depth": 330,
+     "alpha": 0.55,
+     "furrows": 0.5,
+     "offset": 214
+    },
+    {
+     "id": "midHills.e",
+     "type": "hill",
+     "x": 4650,
+     "y": 690,
+     "width": 1600,
+     "height": 135,
+     "depth": 330,
+     "alpha": 0.5,
+     "furrows": 0.45,
+     "offset": 246
+    },
+    {
+     "id": "midHills.olives",
+     "type": "oliveGrove",
+     "x": 3080,
+     "y": 614,
+     "rows": 4,
+     "n": 8,
+     "spacing": 54,
+     "rowGap": 17,
+     "scale": 0.52
+    },
+    {
+     "id": "midHills.olives2",
+     "type": "oliveGrove",
+     "x": 180,
+     "y": 622,
+     "rows": 3,
+     "n": 6,
+     "spacing": 48,
+     "rowGap": 15,
+     "scale": 0.44
+    },
+    {
+     "id": "midHills.farm2",
+     "type": "farmhouse",
+     "x": 3545,
+     "y": 552,
+     "scale": 0.44
+    },
+    {
+     "id": "midHills.cypresses2",
+     "type": "cypressRow",
+     "x": 3640,
+     "y": 552,
+     "n": 3,
+     "spacing": 28,
+     "along": 2.6,
+     "scale": 0.4,
+     "h": 58
+    },
+    {
+     "id": "midHills.road",
+     "type": "road",
+     "width": 26,
+     "points": [
+      [
+       1060,
+       716
+      ],
+      [
+       1225,
+       686
+      ],
+      [
+       1170,
+       652
+      ],
+      [
+       1280,
+       618
+      ],
+      [
+       1382,
+       586
+      ],
+      [
+       1442,
+       556
+      ],
+      [
+       1486,
+       528
+      ]
+     ]
+    },
+    {
+     "id": "midHills.cypresses",
+     "type": "cypressRow",
+     "x": 1506,
+     "y": 544,
+     "n": 9,
+     "spacing": -52,
+     "along": 21.5,
+     "scale": 0.36,
+     "h": 66
+    }
+   ]
+  },
+  {
+   "id": "crest",
+   "sort": false,
+   "objects": [
+    {
+     "id": "crest.a",
+     "type": "hill",
+     "x": 700,
+     "y": 740,
+     "width": 2000,
+     "height": 115,
+     "depth": 300,
+     "alpha": 0.64,
+     "furrows": 0.7,
+     "offset": 268
+    },
+    {
+     "id": "crest.c",
+     "type": "hill",
+     "x": 3900,
+     "y": 740,
+     "width": 2100,
+     "height": 105,
+     "depth": 300,
+     "alpha": 0.64,
+     "furrows": 0.7,
+     "offset": 311
+    },
+    {
+     "id": "crest.b",
+     "type": "hill",
+     "x": 2300,
+     "y": 740,
+     "width": 1800,
+     "height": 150,
+     "depth": 300,
+     "alpha": 0.64,
+     "furrows": 0.78,
+     "offset": 290
+    },
+    {
+     "id": "crest.farmhouse",
+     "type": "farmhouse",
+     "x": 2300,
+     "y": 597,
+     "scale": 1.15
+    },
+    {
+     "id": "crest.cypresses",
+     "type": "cypressRow",
+     "x": 2430,
+     "y": 597,
+     "n": 5,
+     "spacing": 60,
+     "along": 9.2,
+     "scale": 0.9,
+     "h": 60
+    },
+    {
+     "id": "crest.cypress1",
+     "type": "cypress",
+     "x": 648,
+     "y": 628,
+     "scale": 0.72,
+     "h": 62
+    },
+    {
+     "id": "crest.cypress2",
+     "type": "cypress",
+     "x": 694,
+     "y": 630,
+     "scale": 0.8,
+     "h": 58
+    },
+    {
+     "id": "crest.cypress3",
+     "type": "cypress",
+     "x": 3835,
+     "y": 640,
+     "scale": 0.74,
+     "h": 60
+    },
+    {
+     "id": "crest.olives",
+     "type": "oliveGrove",
+     "x": 4120,
+     "y": 664,
+     "rows": 4,
+     "n": 7,
+     "spacing": 58,
+     "rowGap": 19,
+     "scale": 0.58
+    }
+   ]
+  },
+  {
+   "id": "nearHills",
+   "sort": false,
+   "objects": [
+    {
+     "id": "nearHills.a",
+     "type": "hill",
+     "x": 1300,
+     "y": 1000,
+     "width": 3200,
+     "height": 285,
+     "depth": 20,
+     "alpha": 0.85,
+     "furrows": 0.95,
+     "offset": 330
+    },
+    {
+     "id": "nearHills.b",
+     "type": "hill",
+     "x": 3500,
+     "y": 1010,
+     "width": 3200,
+     "height": 300,
+     "depth": 20,
+     "alpha": 0.85,
+     "furrows": 0.9,
+     "offset": 372
+    }
+   ]
+  },
+  {
+   "id": "fore",
+   "sort": false,
+   "objects": [
+    {
+     "id": "fore.vines",
+     "type": "vines",
+     "x": 120,
+     "y": 975,
+     "rows": 5,
+     "length": 1250,
+     "scale": 1.1,
+     "angle": -0.09
+    },
+    {
+     "id": "fore.pine",
+     "type": "umbrellaPine",
+     "x": 4430,
+     "y": 935,
+     "h": 95,
+     "scale": 1.15
+    },
+    {
+     "id": "fore.pine2",
+     "type": "umbrellaPine",
+     "x": 2060,
+     "y": 884,
+     "h": 88,
+     "scale": 0.95
+    },
+    {
+     "id": "fore.grass",
+     "type": "grassField",
+     "y": 1006,
+     "h": 70,
+     "cell": 26,
+     "scale": 1.1,
+     "alpha": 0.6,
+     "from": 2750
+    }
+   ]
+  }
+ ],
+ "edits": {}
+}

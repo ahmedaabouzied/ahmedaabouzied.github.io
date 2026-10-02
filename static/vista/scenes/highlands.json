@@ -1,0 +1,421 @@
+{
+ "name": "Highland Loch",
+ "description": "Bare hills over a still loch, a bothy, and a stag on the skyline.",
+ "date": "2026-10-04",
+ "seed": 1745,
+ "width": 4400,
+ "height": 1000,
+ "paper": "#e9e6dc",
+ "palette": {
+  "ink": [
+   22,
+   24,
+   27
+  ],
+  "tint": [
+   74,
+   92,
+   108
+  ],
+  "accent": [
+   176,
+   57,
+   42
+  ]
+ },
+ "depth": {
+  "horizon": 580,
+  "near": 1000,
+  "sFar": 0.3,
+  "sNear": 1.3,
+  "power": 1.3
+ },
+ "layers": [
+  {
+   "id": "sky",
+   "objects": [
+    {
+     "id": "sky.haze",
+     "type": "haze",
+     "y": 580,
+     "h": 430,
+     "alpha": 0.1
+    },
+    {
+     "id": "sky.birds1",
+     "type": "birds",
+     "x": 1750,
+     "y": 250,
+     "n": 4,
+     "scale": 2
+    },
+    {
+     "id": "sky.birds2",
+     "type": "birds",
+     "x": 3250,
+     "y": 185,
+     "n": 3,
+     "scale": 1.8
+    }
+   ]
+  },
+  {
+   "id": "farHills",
+   "sort": false,
+   "objects": [
+    {
+     "id": "farHills.a",
+     "type": "brae",
+     "x": 700,
+     "y": 640,
+     "width": 2800,
+     "height": 429,
+     "alpha": 0.42,
+     "offset": 3
+    },
+    {
+     "id": "farHills.b",
+     "type": "brae",
+     "x": 3300,
+     "y": 640,
+     "width": 2600,
+     "height": 416,
+     "alpha": 0.42,
+     "offset": 23
+    },
+    {
+     "id": "farHills.rain1",
+     "type": "rain",
+     "x": 1500,
+     "from": 150,
+     "to": 2900,
+     "y": 150,
+     "h": 440,
+     "alpha": 0.26
+    },
+    {
+     "id": "farHills.rain2",
+     "type": "rain",
+     "x": 3650,
+     "from": 2900,
+     "to": 4400,
+     "y": 170,
+     "h": 420,
+     "alpha": 0.2
+    },
+    {
+     "id": "farHills.cloud",
+     "type": "mist",
+     "y": 362,
+     "h": 105,
+     "strength": 0.75,
+     "wave": 240,
+     "offset": 17,
+     "patch": 0.5,
+     "drift": 0.8
+    },
+    {
+     "id": "farHills.mist",
+     "type": "mist",
+     "y": 586,
+     "h": 30,
+     "strength": 0.55,
+     "offset": 5
+    }
+   ]
+  },
+  {
+   "id": "midHills",
+   "sort": false,
+   "objects": [
+    {
+     "id": "midHills.a",
+     "type": "brae",
+     "x": 300,
+     "y": 640,
+     "width": 2000,
+     "height": 269,
+     "alpha": 0.5,
+     "offset": 41
+    },
+    {
+     "id": "midHills.b",
+     "type": "brae",
+     "x": 1900,
+     "y": 640,
+     "width": 2200,
+     "height": 284,
+     "alpha": 0.5,
+     "offset": 61
+    },
+    {
+     "id": "midHills.c",
+     "type": "brae",
+     "x": 3900,
+     "y": 640,
+     "width": 2000,
+     "height": 260,
+     "alpha": 0.5,
+     "offset": 83
+    },
+    {
+     "id": "midHills.mist",
+     "type": "mist",
+     "y": 604,
+     "h": 34,
+     "strength": 0.55,
+     "offset": 7,
+     "patch": 0.3,
+     "drift": 0.5
+    }
+   ]
+  },
+  {
+   "id": "nearHill",
+   "sort": false,
+   "objects": [
+    {
+     "id": "nearHill.mass",
+     "type": "brae",
+     "x": 4150,
+     "y": 640,
+     "width": 2100,
+     "height": 274,
+     "alpha": 1,
+     "offset": 101
+    },
+    {
+     "id": "nearHill.rocks1",
+     "type": "rocks",
+     "x": 3560,
+     "y": 600,
+     "scale": 0.5
+    },
+    {
+     "id": "nearHill.hind1",
+     "type": "hind",
+     "x": 3845,
+     "y": 466,
+     "scale": 1.25,
+     "facing": -1
+    },
+    {
+     "id": "nearHill.hind2",
+     "type": "hind",
+     "x": 3920,
+     "y": 464,
+     "scale": 1.3,
+     "facing": -1
+    },
+    {
+     "id": "nearHill.stag",
+     "type": "stag",
+     "x": 4010,
+     "y": 442,
+     "scale": 1.45,
+     "facing": -1,
+     "tufts": 2
+    },
+    {
+     "id": "nearHill.rocks2",
+     "type": "rocks",
+     "x": 4240,
+     "y": 578,
+     "scale": 0.45
+    }
+   ]
+  },
+  {
+   "id": "loch",
+   "objects": [
+    {
+     "id": "loch.water",
+     "type": "lake",
+     "y": 640,
+     "bottom": 1000,
+     "alpha": 0.5,
+     "ripple": 3,
+     "tint": 0.07
+    },
+    {
+     "id": "loch.mist",
+     "type": "mist",
+     "y": 650,
+     "h": 28,
+     "strength": 0.45,
+     "offset": 13,
+     "wave": 300,
+     "patch": 0.4,
+     "drift": 0.6
+    }
+   ]
+  },
+  {
+   "id": "nearShore",
+   "objects": [
+    {
+     "id": "nearShore.land",
+     "type": "land",
+     "y": 880,
+     "wave": 85,
+     "waveScale": 700,
+     "alpha": 0.3,
+     "tint": 0.09,
+     "edge": 2.6,
+     "edgeAlpha": 0.7,
+     "bumps": [
+      {
+       "x": 820,
+       "w": 520,
+       "h": 52
+      },
+      {
+       "x": 3240,
+       "w": 600,
+       "h": 58
+      }
+     ]
+    },
+    {
+     "id": "nearShore.shore",
+     "type": "shore",
+     "y": 880,
+     "wave": 85,
+     "waveScale": 700,
+     "h": 22,
+     "cell": 5,
+     "alpha": 0.42,
+     "order": 1,
+     "bumps": [
+      {
+       "x": 820,
+       "w": 520,
+       "h": 52
+      },
+      {
+       "x": 3240,
+       "w": 600,
+       "h": 58
+      }
+     ]
+    },
+    {
+     "id": "nearShore.marks",
+     "type": "marks",
+     "y0": 900,
+     "y1": 995,
+     "cell": 40,
+     "alpha": 0.14,
+     "order": 1
+    },
+    {
+     "id": "nearShore.bothy",
+     "type": "bothy",
+     "x": 1150,
+     "y": 820,
+     "scale": 2,
+     "facing": 1
+    },
+    {
+     "id": "nearShore.rocks1",
+     "type": "rocks",
+     "x": 560,
+     "y": 858,
+     "scale": 0.85
+    },
+    {
+     "id": "nearShore.rocks2",
+     "type": "rocks",
+     "x": 2320,
+     "y": 920,
+     "scale": 0.95
+    },
+    {
+     "id": "nearShore.rocks3",
+     "type": "rocks",
+     "x": 3480,
+     "y": 862,
+     "scale": 0.8
+    },
+    {
+     "id": "nearShore.rocks4",
+     "type": "rocks",
+     "x": 1720,
+     "y": 915,
+     "scale": 0.8
+    },
+    {
+     "id": "nearShore.rocks5",
+     "type": "rocks",
+     "x": 2960,
+     "y": 845,
+     "scale": 0.95
+    },
+    {
+     "id": "nearShore.rocks6",
+     "type": "rocks",
+     "x": 4120,
+     "y": 890,
+     "scale": 0.9
+    },
+    {
+     "id": "nearShore.heather1",
+     "type": "heather",
+     "x": 380,
+     "y": 915,
+     "width": 150
+    },
+    {
+     "id": "nearShore.heather2",
+     "type": "heather",
+     "x": 980,
+     "y": 882,
+     "width": 170
+    },
+    {
+     "id": "nearShore.heather3",
+     "type": "heather",
+     "x": 1560,
+     "y": 950,
+     "width": 160
+    },
+    {
+     "id": "nearShore.heather4",
+     "type": "heather",
+     "x": 2180,
+     "y": 962,
+     "width": 180
+    },
+    {
+     "id": "nearShore.heather5",
+     "type": "heather",
+     "x": 2820,
+     "y": 892,
+     "width": 150
+    },
+    {
+     "id": "nearShore.heather6",
+     "type": "heather",
+     "x": 3700,
+     "y": 930,
+     "width": 170
+    }
+   ]
+  },
+  {
+   "id": "fore",
+   "objects": [
+    {
+     "id": "fore.heather",
+     "type": "grassField",
+     "y": 1006,
+     "h": 100,
+     "cell": 40,
+     "scale": 1.5,
+     "alpha": 0.8
+    }
+   ]
+  }
+ ],
+ "edits": {}
+}

@@ -1,0 +1,384 @@
+{
+ "name": "Norwegian Fjord",
+ "description": "Sheer walls, white waterfalls, a red fishing hut, a ferry the size of a thumb.",
+ "date": "2026-10-06",
+ "seed": 1814,
+ "width": 4400,
+ "height": 1000,
+ "paper": "#e6e9e8",
+ "palette": {
+  "ink": [
+   20,
+   22,
+   26
+  ],
+  "tint": [
+   82,
+   104,
+   122
+  ],
+  "accent": [
+   190,
+   54,
+   40
+  ]
+ },
+ "depth": {
+  "horizon": 620,
+  "near": 1000,
+  "sFar": 0.3,
+  "sNear": 1.3,
+  "power": 1.3
+ },
+ "layers": [
+  {
+   "id": "sky",
+   "objects": [
+    {
+     "id": "sky.haze",
+     "type": "haze",
+     "y": 660,
+     "h": 420,
+     "alpha": 0.1
+    },
+    {
+     "id": "sky.birds1",
+     "type": "birds",
+     "x": 1980,
+     "y": 150,
+     "n": 4,
+     "scale": 2.2
+    },
+    {
+     "id": "sky.birds2",
+     "type": "birds",
+     "x": 2620,
+     "y": 235,
+     "n": 3,
+     "scale": 1.8
+    }
+   ]
+  },
+  {
+   "id": "farWall",
+   "sort": false,
+   "objects": [
+    {
+     "id": "farWall.a",
+     "type": "cliff",
+     "x": 2200,
+     "y": 697,
+     "width": 1500,
+     "height": 270,
+     "alpha": 0.35,
+     "side": 1,
+     "snow": 0.3,
+     "summits": 4
+    },
+    {
+     "id": "farWall.b",
+     "type": "cliff",
+     "x": 2500,
+     "y": 696,
+     "width": 1300,
+     "height": 215,
+     "alpha": 0.28,
+     "side": -1,
+     "snow": 0.25,
+     "summits": 3
+    },
+    {
+     "id": "farWall.mist",
+     "type": "mist",
+     "y": 555,
+     "h": 60,
+     "strength": 0.35,
+     "wave": 240,
+     "offset": 13,
+     "patch": 0.35,
+     "drift": 0.6
+    },
+    {
+     "id": "farWall.haze",
+     "type": "mist",
+     "y": 674,
+     "h": 40,
+     "strength": 0.55,
+     "offset": 4
+    }
+   ]
+  },
+  {
+   "id": "mainWalls",
+   "sort": false,
+   "objects": [
+    {
+     "id": "mainWalls.midLeft",
+     "type": "cliff",
+     "x": 1350,
+     "y": 702,
+     "width": 1500,
+     "height": 470,
+     "alpha": 0.6,
+     "side": 1,
+     "snow": 0.45,
+     "summits": 4
+    },
+    {
+     "id": "mainWalls.midLeftFall",
+     "type": "waterfall",
+     "x": 1700,
+     "y": 420,
+     "h": 265,
+     "w": 2.6,
+     "alpha": 0.8
+    },
+    {
+     "id": "mainWalls.midRight",
+     "type": "cliff",
+     "x": 3150,
+     "y": 702,
+     "width": 1550,
+     "height": 520,
+     "alpha": 0.64,
+     "side": -1,
+     "snow": 0.4,
+     "summits": 4
+    },
+    {
+     "id": "mainWalls.midRightFall",
+     "type": "waterfall",
+     "x": 2900,
+     "y": 390,
+     "h": 295,
+     "w": 2.8,
+     "alpha": 0.8
+    },
+    {
+     "id": "mainWalls.nearLeft",
+     "type": "cliff",
+     "x": 350,
+     "y": 706,
+     "width": 2000,
+     "height": 595,
+     "alpha": 1,
+     "side": 1,
+     "snow": 0.6,
+     "summits": 3
+    },
+    {
+     "id": "mainWalls.nearLeftFall",
+     "type": "waterfall",
+     "x": 900,
+     "y": 300,
+     "h": 390,
+     "w": 3.4
+    },
+    {
+     "id": "mainWalls.nearRight",
+     "type": "cliff",
+     "x": 4150,
+     "y": 706,
+     "width": 2000,
+     "height": 570,
+     "alpha": 1,
+     "side": -1,
+     "snow": 0.55,
+     "summits": 4
+    },
+    {
+     "id": "mainWalls.nearRightFall",
+     "type": "waterfall",
+     "x": 3700,
+     "y": 340,
+     "h": 350,
+     "w": 3.2
+    },
+    {
+     "id": "mainWalls.leftBase",
+     "type": "forest",
+     "y": 701,
+     "from": -40,
+     "to": 2150,
+     "cell": 7,
+     "h": [
+      7,
+      32
+     ],
+     "alpha": 0.6,
+     "density": 0.55,
+     "wave": 220,
+     "depth": 4
+    },
+    {
+     "id": "mainWalls.rightBase",
+     "type": "forest",
+     "y": 701,
+     "from": 2400,
+     "to": 4400,
+     "cell": 7,
+     "h": [
+      7,
+      32
+     ],
+     "alpha": 0.6,
+     "density": 0.55,
+     "offset": 31,
+     "wave": 220,
+     "depth": 4
+    },
+    {
+     "id": "mainWalls.cloud",
+     "type": "mist",
+     "y": 350,
+     "h": 46,
+     "strength": 0.22,
+     "wave": 420,
+     "offset": 27,
+     "patch": 0.9,
+     "drift": 1.3
+    }
+   ]
+  },
+  {
+   "id": "water",
+   "objects": [
+    {
+     "id": "water.fjord",
+     "type": "lake",
+     "y": 700,
+     "bottom": 1000,
+     "alpha": 0.6,
+     "ripple": 2,
+     "tint": 0.13,
+     "shore": false
+    }
+   ]
+  },
+  {
+   "id": "onWater",
+   "sort": false,
+   "objects": [
+    {
+     "id": "onWater.ferry",
+     "type": "ferry",
+     "x": 2250,
+     "y": 782,
+     "scale": 1.25,
+     "facing": -1
+    },
+    {
+     "id": "onWater.shore",
+     "type": "land",
+     "y": 1005,
+     "from": 2900,
+     "wave": 22,
+     "waveScale": 230,
+     "alpha": 0.2,
+     "tint": 0.08,
+     "bumps": [
+      {
+       "x": 4340,
+       "w": 350,
+       "h": 285
+      }
+     ]
+    },
+    {
+     "id": "onWater.rocks",
+     "type": "rocks",
+     "x": 4135,
+     "y": 785,
+     "scale": 0.62
+    },
+    {
+     "id": "onWater.rorbu",
+     "type": "rorbu",
+     "x": 3880,
+     "y": 764,
+     "scale": 1.3,
+     "facing": -1
+    }
+   ]
+  },
+  {
+   "id": "fore",
+   "objects": [
+    {
+     "id": "fore.land",
+     "type": "land",
+     "y": 1005,
+     "to": 1500,
+     "order": -1,
+     "wave": 30,
+     "waveScale": 250,
+     "alpha": 0.22,
+     "tint": 0.1,
+     "bumps": [
+      {
+       "x": 110,
+       "w": 500,
+       "h": 215
+      }
+     ]
+    },
+    {
+     "id": "fore.rocks1",
+     "type": "rocks",
+     "x": 300,
+     "y": 820,
+     "scale": 1.2
+    },
+    {
+     "id": "fore.rocks2",
+     "type": "rocks",
+     "x": 600,
+     "y": 928,
+     "scale": 0.95
+    },
+    {
+     "id": "fore.pine1",
+     "type": "pine",
+     "x": 90,
+     "y": 790,
+     "h": 250,
+     "tufts": 2
+    },
+    {
+     "id": "fore.pine2",
+     "type": "pine",
+     "x": 215,
+     "y": 798,
+     "h": 195
+    },
+    {
+     "id": "fore.pine3",
+     "type": "pine",
+     "x": 540,
+     "y": 900,
+     "h": 150,
+     "tufts": 2
+    },
+    {
+     "id": "fore.pine4",
+     "type": "pine",
+     "x": 725,
+     "y": 958,
+     "h": 120
+    },
+    {
+     "id": "fore.grass",
+     "type": "grassField",
+     "y": 1002,
+     "h": 130,
+     "cell": 22,
+     "to": 1050,
+     "order": 1,
+     "scale": 1.05,
+     "alpha": 0.62
+    }
+   ]
+  }
+ ],
+ "edits": {}
+}

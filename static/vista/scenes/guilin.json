@@ -1,0 +1,335 @@
+{
+ "name": "Li River",
+ "description": "Karst towers in river mist, a cormorant fisherman on his raft.",
+ "date": "2026-10-03",
+ "seed": 1683,
+ "width": 4400,
+ "height": 1000,
+ "paper": "#eae7de",
+ "palette": {
+  "ink": [
+   20,
+   22,
+   26
+  ],
+  "tint": [
+   86,
+   104,
+   122
+  ],
+  "accent": [
+   178,
+   58,
+   40
+  ]
+ },
+ "depth": {
+  "horizon": 600,
+  "near": 1000,
+  "sFar": 0.3,
+  "sNear": 1.3,
+  "power": 1.3
+ },
+ "layers": [
+  {
+   "id": "sky",
+   "objects": [
+    {
+     "id": "sky.sun",
+     "type": "sun",
+     "x": 1860,
+     "y": 175,
+     "r": 36,
+     "alpha": 0.055
+    },
+    {
+     "id": "sky.birds1",
+     "type": "birds",
+     "x": 2620,
+     "y": 225,
+     "n": 4,
+     "scale": 2.1
+    },
+    {
+     "id": "sky.birds2",
+     "type": "birds",
+     "x": 3120,
+     "y": 145,
+     "n": 3,
+     "scale": 1.9
+    }
+   ]
+  },
+  {
+   "id": "farRange",
+   "sort": false,
+   "objects": [
+    {
+     "id": "farRange.a",
+     "type": "karst",
+     "x": 430,
+     "y": 698,
+     "width": 400,
+     "height": 470,
+     "alpha": 0.36
+    },
+    {
+     "id": "farRange.b",
+     "type": "karst",
+     "x": 740,
+     "y": 698,
+     "width": 330,
+     "height": 390,
+     "alpha": 0.3,
+     "lean": 0.05
+    },
+    {
+     "id": "farRange.c",
+     "type": "karst",
+     "x": 2380,
+     "y": 698,
+     "width": 440,
+     "height": 500,
+     "alpha": 0.38,
+     "lean": -0.04
+    },
+    {
+     "id": "farRange.d",
+     "type": "karst",
+     "x": 2900,
+     "y": 698,
+     "width": 370,
+     "height": 420,
+     "alpha": 0.31
+    },
+    {
+     "id": "farRange.mist",
+     "type": "mist",
+     "y": 664,
+     "h": 76,
+     "strength": 0.7,
+     "offset": 4.2,
+     "wave": 520,
+     "patch": 0.3,
+     "drift": 0.5
+    }
+   ]
+  },
+  {
+   "id": "midRange",
+   "sort": false,
+   "objects": [
+    {
+     "id": "midRange.a",
+     "type": "karst",
+     "x": 210,
+     "y": 701,
+     "width": 270,
+     "height": 290,
+     "alpha": 0.55,
+     "lean": -0.06
+    },
+    {
+     "id": "midRange.b",
+     "type": "karst",
+     "x": 880,
+     "y": 701,
+     "width": 310,
+     "height": 350,
+     "alpha": 0.62,
+     "lean": 0.05
+    },
+    {
+     "id": "midRange.c",
+     "type": "karst",
+     "x": 1450,
+     "y": 701,
+     "width": 340,
+     "height": 330,
+     "alpha": 0.6
+    },
+    {
+     "id": "midRange.d",
+     "type": "karst",
+     "x": 2620,
+     "y": 701,
+     "width": 290,
+     "height": 400,
+     "alpha": 0.64,
+     "lean": -0.05
+    },
+    {
+     "id": "midRange.e",
+     "type": "karst",
+     "x": 3090,
+     "y": 701,
+     "width": 310,
+     "height": 300,
+     "alpha": 0.58,
+     "lean": 0.04
+    },
+    {
+     "id": "midRange.f",
+     "type": "karst",
+     "x": 3660,
+     "y": 701,
+     "width": 270,
+     "height": 360,
+     "alpha": 0.62,
+     "lean": 0.05
+    },
+    {
+     "id": "midRange.mist",
+     "type": "mist",
+     "y": 694,
+     "h": 54,
+     "strength": 0.66,
+     "offset": 17,
+     "wave": 640,
+     "drift": 0.3
+    }
+   ]
+  },
+  {
+   "id": "river",
+   "objects": [
+    {
+     "id": "river.water",
+     "type": "lake",
+     "y": 702,
+     "bottom": 1000,
+     "alpha": 0.36,
+     "ripple": 4,
+     "tint": 0.06,
+     "shore": false
+    }
+   ]
+  },
+  {
+   "id": "nearBank",
+   "objects": [
+    {
+     "id": "nearBank.land",
+     "type": "land",
+     "y": 1030,
+     "bottom": 1120,
+     "wave": 20,
+     "waveScale": 420,
+     "alpha": 0.13,
+     "tint": 0.05,
+     "bumps": [
+      {
+       "x": 120,
+       "w": 420,
+       "h": 230
+      },
+      {
+       "x": 4320,
+       "w": 450,
+       "h": 250
+      }
+     ]
+    },
+    {
+     "id": "nearBank.bamboo1",
+     "type": "bamboo",
+     "x": 70,
+     "y": 812,
+     "scale": 0.85,
+     "n": 5
+    },
+    {
+     "id": "nearBank.bamboo2",
+     "type": "bamboo",
+     "x": 185,
+     "y": 810,
+     "scale": 1,
+     "n": 6
+    },
+    {
+     "id": "nearBank.bamboo3",
+     "type": "bamboo",
+     "x": 310,
+     "y": 845,
+     "scale": 0.8,
+     "n": 5
+    },
+    {
+     "id": "nearBank.bamboo4",
+     "type": "bamboo",
+     "x": 430,
+     "y": 898,
+     "scale": 0.95,
+     "n": 6
+    },
+    {
+     "id": "nearBank.bamboo5",
+     "type": "bamboo",
+     "x": 4010,
+     "y": 876,
+     "scale": 0.9,
+     "n": 5
+    },
+    {
+     "id": "nearBank.bamboo6",
+     "type": "bamboo",
+     "x": 4140,
+     "y": 822,
+     "scale": 1.05,
+     "n": 6
+    },
+    {
+     "id": "nearBank.bamboo7",
+     "type": "bamboo",
+     "x": 4270,
+     "y": 789,
+     "scale": 0.85,
+     "n": 5
+    }
+   ]
+  },
+  {
+   "id": "onWater",
+   "objects": [
+    {
+     "id": "onWater.raft",
+     "type": "raft",
+     "x": 1500,
+     "y": 815,
+     "scale": 1.4,
+     "facing": 1
+    },
+    {
+     "id": "onWater.raftFar",
+     "type": "raft",
+     "x": 3380,
+     "y": 742,
+     "scale": 0.55,
+     "facing": -1
+    }
+   ]
+  },
+  {
+   "id": "fore",
+   "objects": [
+    {
+     "id": "fore.bamboo1",
+     "type": "bamboo",
+     "x": 4180,
+     "y": 1010,
+     "scale": 1.9,
+     "n": 7
+    },
+    {
+     "id": "fore.bamboo2",
+     "type": "bamboo",
+     "x": 4340,
+     "y": 1030,
+     "scale": 2.2,
+     "n": 6
+    }
+   ]
+  }
+ ],
+ "edits": {}
+}

@@ -1,0 +1,37 @@
+[
+ {
+  "id": "alps-lake",
+  "name": "Lake in the Alps",
+  "date": "2026-10-01"
+ },
+ {
+  "id": "savanna",
+  "name": "Nyika",
+  "date": "2026-10-02"
+ },
+ {
+  "id": "guilin",
+  "name": "Li River",
+  "date": "2026-10-03"
+ },
+ {
+  "id": "highlands",
+  "name": "Highland Loch",
+  "date": "2026-10-04"
+ },
+ {
+  "id": "sahara",
+  "name": "Sahara Erg",
+  "date": "2026-10-05"
+ },
+ {
+  "id": "fjord",
+  "name": "Norwegian Fjord",
+  "date": "2026-10-06"
+ },
+ {
+  "id": "tuscany",
+  "name": "Tuscan Hills",
+  "date": "2026-10-07"
+ }
+]

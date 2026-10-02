@@ -1,0 +1,445 @@
+{
+ "name": "Lake in the Alps",
+ "description": "Snow peaks, spruce shores and a still lake in ink wash.",
+ "date": "2026-10-01",
+ "seed": 2207,
+ "width": 4400,
+ "height": 1000,
+ "paper": "#e9e6dc",
+ "palette": {
+  "ink": [
+   24,
+   26,
+   30
+  ],
+  "tint": [
+   70,
+   92,
+   110
+  ],
+  "accent": [
+   176,
+   57,
+   42
+  ]
+ },
+ "depth": {
+  "horizon": 560,
+  "near": 1000,
+  "sFar": 0.3,
+  "sNear": 1.3,
+  "power": 1.3
+ },
+ "layers": [
+  {
+   "id": "sky",
+   "objects": [
+    {
+     "id": "sky.sun",
+     "type": "sun",
+     "x": 3650,
+     "y": 175,
+     "r": 30,
+     "alpha": 0.06
+    },
+    {
+     "id": "sky.birds1",
+     "type": "birds",
+     "x": 1350,
+     "y": 120,
+     "n": 4,
+     "scale": 2.2
+    },
+    {
+     "id": "sky.birds2",
+     "type": "birds",
+     "x": 3050,
+     "y": 200,
+     "n": 3,
+     "scale": 2.2
+    }
+   ]
+  },
+  {
+   "id": "farRange",
+   "sort": false,
+   "objects": [
+    {
+     "id": "farRange.a",
+     "type": "peak",
+     "x": 330,
+     "y": 548,
+     "width": 950,
+     "height": 250,
+     "alpha": 0.42,
+     "snow": 0.45,
+     "subpeaks": 3
+    },
+    {
+     "id": "farRange.b",
+     "type": "peak",
+     "x": 1300,
+     "y": 548,
+     "width": 1050,
+     "height": 300,
+     "alpha": 0.42,
+     "snow": 0.45,
+     "subpeaks": 4
+    },
+    {
+     "id": "farRange.c",
+     "type": "peak",
+     "x": 2450,
+     "y": 548,
+     "width": 950,
+     "height": 270,
+     "alpha": 0.42,
+     "snow": 0.45,
+     "subpeaks": 3
+    },
+    {
+     "id": "farRange.d",
+     "type": "peak",
+     "x": 3400,
+     "y": 548,
+     "width": 1150,
+     "height": 320,
+     "alpha": 0.42,
+     "snow": 0.45,
+     "subpeaks": 4
+    },
+    {
+     "id": "farRange.e",
+     "type": "peak",
+     "x": 4300,
+     "y": 548,
+     "width": 900,
+     "height": 240,
+     "alpha": 0.42,
+     "snow": 0.45,
+     "subpeaks": 3
+    },
+    {
+     "id": "farRange.mist",
+     "type": "mist",
+     "y": 522,
+     "h": 42,
+     "strength": 0.55,
+     "order": 0,
+     "patch": 0.3,
+     "drift": 0.5
+    }
+   ]
+  },
+  {
+   "id": "mainRange",
+   "sort": false,
+   "objects": [
+    {
+     "id": "mainRange.a",
+     "type": "peak",
+     "x": 650,
+     "y": 563,
+     "width": 1200,
+     "height": 360,
+     "snow": 0.5,
+     "subpeaks": 4,
+     "apex": 0.12
+    },
+    {
+     "id": "mainRange.b",
+     "type": "peak",
+     "x": 1950,
+     "y": 563,
+     "width": 1350,
+     "height": 440,
+     "snow": 0.5,
+     "apex": -0.1,
+     "subpeaks": 5
+    },
+    {
+     "id": "mainRange.c",
+     "type": "peak",
+     "x": 3150,
+     "y": 563,
+     "width": 1100,
+     "height": 380,
+     "snow": 0.5,
+     "subpeaks": 4,
+     "apex": 0.15
+    },
+    {
+     "id": "mainRange.d",
+     "type": "peak",
+     "x": 4150,
+     "y": 563,
+     "width": 900,
+     "height": 300,
+     "snow": 0.5,
+     "subpeaks": 3,
+     "apex": -0.12
+    },
+    {
+     "id": "mainRange.cloud",
+     "type": "mist",
+     "y": 455,
+     "h": 30,
+     "strength": 0.7,
+     "wave": 190,
+     "offset": 21,
+     "order": 0,
+     "patch": 0.55,
+     "drift": 0.8
+    },
+    {
+     "id": "mainRange.mist",
+     "type": "mist",
+     "y": 548,
+     "h": 24,
+     "strength": 0.6,
+     "offset": 6,
+     "order": 0
+    }
+   ]
+  },
+  {
+   "id": "farShore",
+   "objects": [
+    {
+     "id": "farShore.forest",
+     "type": "forest",
+     "y": 563,
+     "amp": 16,
+     "wave": 260,
+     "depth": 5,
+     "h": [
+      5,
+      13
+     ],
+     "alpha": 0.6
+    },
+    {
+     "id": "farShore.chalet1",
+     "type": "chalet",
+     "x": 2150,
+     "y": 562,
+     "scale": 0.42
+    },
+    {
+     "id": "farShore.chalet2",
+     "type": "chalet",
+     "x": 2215,
+     "y": 563,
+     "scale": 0.36
+    },
+    {
+     "id": "farShore.chalet3",
+     "type": "chalet",
+     "x": 2300,
+     "y": 562,
+     "scale": 0.4
+    },
+    {
+     "id": "farShore.chalet4",
+     "type": "chalet",
+     "x": 960,
+     "y": 563,
+     "scale": 0.38
+    }
+   ]
+  },
+  {
+   "id": "lake",
+   "objects": [
+    {
+     "id": "lake.water",
+     "type": "lake",
+     "y": 566,
+     "bottom": 1000,
+     "alpha": 0.5,
+     "ripple": 3,
+     "tint": 0.07
+    }
+   ]
+  },
+  {
+   "id": "onWater",
+   "objects": [
+    {
+     "id": "onWater.boat",
+     "type": "boat",
+     "x": 2650,
+     "y": 705,
+     "scale": 1.1,
+     "facing": -1,
+     "motion": {
+      "path": [
+       [
+        1450,
+        712
+       ],
+       [
+        2350,
+        700
+       ],
+       [
+        3050,
+        708
+       ]
+      ],
+      "speed": 9,
+      "bob": 0.8,
+      "row": 2.4,
+      "wake": 1
+     }
+    }
+   ]
+  },
+  {
+   "id": "nearShore",
+   "objects": [
+    {
+     "id": "nearShore.land",
+     "type": "land",
+     "y": 832,
+     "wave": 24,
+     "waveScale": 380,
+     "alpha": 0.14,
+     "tint": 0.05,
+     "bumps": [
+      {
+       "x": 150,
+       "w": 350,
+       "h": 120
+      },
+      {
+       "x": 4300,
+       "w": 400,
+       "h": 150
+      }
+     ]
+    },
+    {
+     "id": "nearShore.marks",
+     "type": "marks",
+     "y0": 850,
+     "y1": 990,
+     "cell": 40,
+     "alpha": 0.12,
+     "order": 0
+    },
+    {
+     "id": "nearShore.rocks1",
+     "type": "rocks",
+     "x": 700,
+     "y": 848,
+     "scale": 0.9
+    },
+    {
+     "id": "nearShore.rocks2",
+     "type": "rocks",
+     "x": 3420,
+     "y": 845,
+     "scale": 0.8
+    },
+    {
+     "id": "nearShore.chalet",
+     "type": "chalet",
+     "x": 3700,
+     "y": 830,
+     "scale": 1.7
+    },
+    {
+     "id": "nearShore.pine1",
+     "type": "pine",
+     "x": 60,
+     "y": 733,
+     "h": 240,
+     "tufts": 2
+    },
+    {
+     "id": "nearShore.pine2",
+     "type": "pine",
+     "x": 190,
+     "y": 727,
+     "h": 200
+    },
+    {
+     "id": "nearShore.pine3",
+     "type": "pine",
+     "x": 300,
+     "y": 745,
+     "h": 170,
+     "tufts": 2
+    },
+    {
+     "id": "nearShore.pine4",
+     "type": "pine",
+     "x": 420,
+     "y": 779,
+     "h": 140
+    },
+    {
+     "id": "nearShore.pine5",
+     "type": "pine",
+     "x": 520,
+     "y": 803,
+     "h": 110,
+     "tufts": 2
+    },
+    {
+     "id": "nearShore.pine6",
+     "type": "pine",
+     "x": 3880,
+     "y": 795,
+     "h": 120
+    },
+    {
+     "id": "nearShore.pine7",
+     "type": "pine",
+     "x": 4000,
+     "y": 760,
+     "h": 160,
+     "tufts": 2
+    },
+    {
+     "id": "nearShore.pine8",
+     "type": "pine",
+     "x": 4130,
+     "y": 720,
+     "h": 200
+    },
+    {
+     "id": "nearShore.pine9",
+     "type": "pine",
+     "x": 4250,
+     "y": 698,
+     "h": 230,
+     "tufts": 2
+    },
+    {
+     "id": "nearShore.pine10",
+     "type": "pine",
+     "x": 4380,
+     "y": 700,
+     "h": 260
+    }
+   ]
+  },
+  {
+   "id": "fore",
+   "objects": [
+    {
+     "id": "fore.grass",
+     "type": "grassField",
+     "y": 1004,
+     "h": 110,
+     "cell": 24,
+     "scale": 1.0,
+     "alpha": 0.7
+    }
+   ]
+  }
+ ],
+ "edits": {}
+}
