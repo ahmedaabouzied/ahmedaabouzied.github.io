@@ -1,8 +1,17 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
+{{ if .Data.Singular }}
+<ul class="blog-posts">
+  {{ range .Pages }}
+  <li><span><i>{{ .Date.Format "02 Jan, 2006" }}</i></span><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
+<small><a href="{{ (.Site.GetPage "/blog").RelPermalink }}">All writing</a></small>
+{{ else }}
 <ul>
   {{ range .Data.Terms.Alphabetical }}
   <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})</li>
   {{ end }}
 </ul>
+{{ end }}
 {{ end }}
