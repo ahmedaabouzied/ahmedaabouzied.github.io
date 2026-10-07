@@ -10,9 +10,13 @@ title: "My article title"
 date: 2026-10-07T12:00:00+02:00
 draft: true
 description: "A concise description of what the article explains."
-tags: [go, networking]
+tags: [tech, go, networking]
 ---
 ```
+
+Use the shared `tech` tag for technical articles, alongside any specific topic
+tags. It groups technical writing at `/blog/tech/`, linked from the navigation.
+Keep the default archetype unclassified so personal posts remain easy to author.
 
 Descriptions and tags are optional. Missing descriptions use a cleaned,
 bounded summary at render time. Keep existing titles and URLs when updating

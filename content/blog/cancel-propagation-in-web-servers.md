@@ -5,6 +5,7 @@ categories:
   - Context
 title: On Cancel Propagation in Web Servers
 date: 2019-05-24T09:33:35+02:00
+tags: [tech]
 ---
 
 ## On Cancellation

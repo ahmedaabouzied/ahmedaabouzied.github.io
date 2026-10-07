@@ -2,6 +2,7 @@
 title: "Problem solving: Box Blur"
 date: 2020-04-01T05:25:44.226Z
 description: Solving the box blur coding challenge on CodeSignal.
+tags: [tech]
 ---
 
 ## Problem Statement

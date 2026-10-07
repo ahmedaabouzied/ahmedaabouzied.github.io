@@ -6,6 +6,7 @@ description: A deeper look into memory management in c++.
 # "on-memory-management-in-c" from the title, dropping the trailing hyphen.
 # Must be `url` rather than `slug` -- slug is sanitized and loses the hyphen too.
 url: /on-memory-management-in-c-/
+tags: [tech]
 ---
 
 ## Overview

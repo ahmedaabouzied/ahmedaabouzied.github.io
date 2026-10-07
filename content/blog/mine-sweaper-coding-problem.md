@@ -2,6 +2,7 @@
 title: "Problem solving: Minesweeper"
 date: 2020-04-02T05:25:44.226Z
 description: Solving the minesweaper coding challenge on CodeSignal.
+tags: [tech]
 ---
 
 ## Problem Statement
