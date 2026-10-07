@@ -1,0 +1,35 @@
+{{- $description := partial "description.html" . -}}
+{{- $article := and .IsPage (eq .Section "blog") -}}
+<meta name="description" content="{{ $description }}">
+{{ if ne .Kind "404" }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if $article }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Params.title | default .Site.Title }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{- range first 1 (.Params.images | default slice) }}
+  {{- $url := . | absURL -}}
+  {{- with $.Resources.GetMatch . }}{{ $url = .Permalink }}{{ end }}
+<meta property="og:image" content="{{ $url }}">
+<meta name="twitter:image" content="{{ $url }}">
+{{- end }}
+{{- if not (.OutputFormats.Get "rss") }}
+  {{- with (.Site.GetPage "/blog").OutputFormats.Get "rss" }}
+<link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Params.title }}">
+  {{- end }}
+{{- end }}
+{{- if $article -}}
+<meta name="author" content="{{ .Site.Params.author }}">
+{{- $author := dict "@type" "Person" "name" .Site.Params.author "url" (("about" | absURL)) -}}
+{{- $profiles := slice -}}
+{{- with .Site.Params.social.github }}{{ $profiles = $profiles | append . }}{{ end -}}
+{{- with .Site.Params.social.linkedin }}{{ $profiles = $profiles | append . }}{{ end -}}
+{{- with $profiles }}{{ $author = merge $author (dict "sameAs" .) }}{{ end -}}
+{{- $data := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "description" $description "author" $author "url" .Permalink "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink) "inLanguage" (partial "page-language.html" .) -}}
+{{- if not .PublishDate.IsZero }}{{ $data = merge $data (dict "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")) }}{{ end -}}
+{{- if and (not .Lastmod.IsZero) (.Lastmod.After .PublishDate) }}{{ $data = merge $data (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) }}{{ end -}}
+<script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>
+{{- end }}

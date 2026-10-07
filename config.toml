@@ -1,29 +1,27 @@
 
-baseURL = "https://blog.aabouzied.com"
+baseURL = "https://blog.aabouzied.com/"
 
 # The name of this wonderful theme ;-).
 theme = 'hugo-bearblog'
 
-googleAnalytics = 'UA-162432082-1'
 
 # Basic metadata configuration for your blog.
 title = "The Smoking Duck Blog"
-author = "Ahmed Abouzied <email@aabouzied.com"
 copyright = "Copyright © 2021, Ahmed Abouzied."
 locale = "en-US"
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
 
-# Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
-disableKinds = ["taxonomy"]
-ignoreErrors = ["error-disable-taxonomy"]
+# Built-in taxonomy indexes support discovery without changing article URLs.
+# The blog section is mounted at /; let it own the root feed.
+[outputs]
+  home = ["HTML"]
+  section = ["HTML", "RSS"]
 
-[server]
-[[server.headers]]
-    for = '/**'
-    [server.headers.values]
-      ContentType = 'application/json'
+[taxonomies]
+  tag = "tags"
+  category = "categories"
 
 [permalinks]
   blog = "/:slug/"
@@ -31,17 +29,15 @@ ignoreErrors = ["error-disable-taxonomy"]
 
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
-  description = "Software developer blog"
+  description = "Technical articles and personal writing by Ahmed Abouzied."
+  author = "Ahmed Abouzied"
+
 
   # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
   # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
   favicon = "profile-photo.jpg"
 
-  # These "images" are used for the structured data templates. This will show up, when
-  # services like Twitter or Slack want to generate a preview of a link to your site.
-  # See https://gohugo.io/templates/internal#twitter-cards and
-  # https://gohugo.io/templates/internal#open-graph.
-  images = ["profile-photo.jpg"]
+  # Optional per-post images provide social previews; inline media is independent.
 
   # Another "title" :-). This one is used as the site_name on the Hugo's internal
   # opengraph structured data template.
@@ -51,6 +47,11 @@ ignoreErrors = ["error-disable-taxonomy"]
   # This theme will, by default, inject a made-with-line at the bottom of the page.
   # You can turn it off, but we would really appreciate if you don’t :-).
   hideMadeWithLine = true
+
+[params.social]
+  github = "https://github.com/ahmedaabouzied"
+  linkedin = ""
+  email = "email@aabouzied.com"
 
 [markup]
   [markup.highlight]

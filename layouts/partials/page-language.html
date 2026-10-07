@@ -1,0 +1,8 @@
+{{- $lang := .Site.Language.Locale | default "en-US" -}}
+{{- with .Params.lang -}}
+  {{- $lang = . -}}
+{{- else -}}
+  {{- /* Reuse the explicit existing Arabic tag; do not guess from prose. */ -}}
+  {{- if in (.Params.tags | default slice) "arabic" -}}{{- $lang = "ar" -}}{{- end -}}
+{{- end -}}
+{{- return $lang -}}
