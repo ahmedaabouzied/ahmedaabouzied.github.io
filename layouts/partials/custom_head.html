@@ -1,18 +1,15 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162432082-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-162432082-1');
-</script>
-
 {{- /* Arabic posts: flip the content column to right-to-left. */ -}}
-{{- if or .Params.rtl (findRE `[\x{0600}-\x{06FF}]` .Title) }}
+{{- if or .Params.rtl (eq (partial "page-language.html" .) "ar") (findRE `[\x{0600}-\x{06FF}]` .Title) }}
 <style>
   main { direction: rtl; text-align: right; }
   main pre, main code { direction: ltr; text-align: left; }
 </style>
 {{- end }}
 
+
+<style>
+  main img { height: auto; }
+  main figure { margin-inline: 0; }
+  main pre { overflow-x: auto; }
+  main pre code { white-space: pre; overflow-wrap: normal; word-break: normal; }
+</style>

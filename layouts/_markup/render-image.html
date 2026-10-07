@@ -1,0 +1,2 @@
+{{- $resource := .Page.Resources.GetMatch .Destination -}}
+<img src="{{ with $resource }}{{ .RelPermalink }}{{ else }}{{ .Destination | safeURL }}{{ end }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ with $resource }}{{ if ne .MediaType.SubType "svg" }} width="{{ .Width }}" height="{{ .Height }}"{{ end }}{{ end }} loading="lazy" decoding="async">
