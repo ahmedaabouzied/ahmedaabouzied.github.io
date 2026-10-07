@@ -1,3 +1,6 @@
 <a href="{{ "/" | relURL }}">Home</a>
 <a href="{{ "/about" | relURL }}">About</a>
 <a href="{{ "/inktober-2027/" | relURL }}">Inktober 2027</a>
+
+<a href="{{ "tags" | relURL }}">Tags</a>
+{{ with (.Site.GetPage "/blog").OutputFormats.Get "rss" }}<a href="{{ .RelPermalink }}">RSS</a>{{ end }}

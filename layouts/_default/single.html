@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<h1>{{ .Title }}</h1>
+<p>
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+      {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+    </time>
+  </i>
+  · <a href="{{ "about" | relURL }}">{{ .Site.Params.author }}</a>
+</p>
+{{ end }}{{ end }}
+<content>
+  {{ .Content }}
+</content>
+<p>
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ if eq .Section "blog" }}
+<p><small><a href="{{ (.Site.GetPage "/blog").RelPermalink }}">All writing</a> · <a href="{{ "tags" | relURL }}">Browse tags</a></small></p>
+{{ end }}
+{{ end }}

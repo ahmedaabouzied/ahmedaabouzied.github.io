@@ -1,0 +1,6 @@
+{{ if ne .Site.Params.hideMadeWithLine true }}Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>{{ end }}
+<small>
+  {{ with .Site.Params.social.github }}<a href="{{ . }}">GitHub</a>{{ end }}
+  {{ with .Site.Params.social.linkedin }} · <a href="{{ . }}">LinkedIn</a>{{ end }}
+  {{ with .Site.Params.social.email }} · <a href="mailto:{{ . }}">Email</a>{{ end }}
+</small>
