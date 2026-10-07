@@ -2,7 +2,7 @@
 # Source: https://medium.com/@ahmedaabouzied/lets-build-a-golang-knowledge-specific-rag-system-with-a-local-llama-llm-707a1c8d1047
 title: "Let’s build a Golang knowledge specific RAG system with a local llama LLM"
 date: 2024-12-27T09:40:45Z
-draft: true
+draft: false
 lang: en
 slug: golang-knowledge-specific-rag
 tags: [tech, go, ai, rag, python]
