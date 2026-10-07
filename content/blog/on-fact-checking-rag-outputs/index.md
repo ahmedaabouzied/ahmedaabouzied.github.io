@@ -6,6 +6,7 @@ draft: false
 lang: en
 slug: on-fact-checking-rag-outputs
 tags: [tech, ai, rag, python, fact-checking]
+description: "Exploring what fact-checking means, then using an LLM fact extractor and DeBERTa to detect contradictions between RAG answers and their context."
 ---
 
 ## Overview

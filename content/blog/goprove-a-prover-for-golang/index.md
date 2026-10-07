@@ -7,6 +7,7 @@ draft: false
 lang: en
 slug: goprove-a-prover-for-golang
 tags: [tech, go, static-analysis]
+description: "Introducing goprove, a Go analyzer that uses abstract interpretation to detect nil-pointer errors, division by zero, and integer overflow."
 ---
 
 Now that AI is writing a lot of production code. We need to have as many checks and validators as possible to validate the code AI writes. That's why I want to share "goprove". A project I have been cooking for more than a month (by hand, AI helped a lot with testing for edge cases though).

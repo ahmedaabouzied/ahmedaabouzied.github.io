@@ -1,7 +1,7 @@
 ---
 title: "Problem solving: Minesweeper"
 date: 2020-04-02T05:25:44.226Z
-description: Solving the minesweaper coding challenge on CodeSignal.
+description: "A C++ solution to CodeSignal’s Minesweeper challenge, counting neighboring mines to construct the game board."
 tags: [tech]
 ---
 

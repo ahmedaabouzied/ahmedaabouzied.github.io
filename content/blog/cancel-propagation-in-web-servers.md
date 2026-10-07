@@ -6,6 +6,7 @@ categories:
 title: On Cancel Propagation in Web Servers
 date: 2019-05-24T09:33:35+02:00
 tags: [tech]
+description: "How Go’s context package propagates client cancellations and timeouts through a web server to its downstream HTTP requests."
 ---
 
 ## On Cancellation

@@ -6,6 +6,7 @@ draft: false
 lang: en
 slug: golang-knowledge-specific-rag
 tags: [tech, go, ai, rag, python]
+description: "Building a local RAG system for Go documentation with Llama, Ollama, LangChain, and Chroma, from loading documents to answering questions."
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 title: "Problem solving: Box Blur"
 date: 2020-04-01T05:25:44.226Z
-description: Solving the box blur coding challenge on CodeSignal.
+description: "A C++ solution to CodeSignal’s Box Blur challenge, averaging 3×3 pixel neighborhoods and removing border pixels."
 tags: [tech]
 ---
 

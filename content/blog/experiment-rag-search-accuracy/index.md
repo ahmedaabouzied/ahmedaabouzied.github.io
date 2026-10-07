@@ -6,6 +6,7 @@ draft: false
 lang: en
 slug: experiment-rag-search-accuracy
 tags: [tech, ai, rag, python, search]
+description: "Comparing Llama and OpenAI embeddings, combining vector and full-text search, and experimenting with Bayesian reranking on Go blog posts."
 ---
 
 ## Overview
