@@ -5,7 +5,7 @@ date = "2021-01-22T01:53:22+02:00"
 #
 # description is optional
 #
-description = "My thoughts on sarcasm in the modern world and its effect on the growth of socities."
+description = "Why sarcasm can feel like a clever response while widening disagreements, and why I prefer reasoned counterarguments to ridicule."
 
 tags = ["personal", "psychology", "sarcasm", "philosophy"]
 +++

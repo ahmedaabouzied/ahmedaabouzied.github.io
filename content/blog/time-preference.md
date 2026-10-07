@@ -3,6 +3,7 @@ title: "Time Preference"
 date: 2021-01-23T12:17:40+02:00
 tags: ["time", "personal", "philosophy"]
 draft: false
+description: "Reflections on time as a limited resource, the pull of instant gratification, and how patience and planning can shape our future."
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 +++
 title = "On the memory of a song"
 date = 2021-04-26T01:00:00.226Z
-description = "Just a situation to show what an idiot I am when it comes to being social"
+description = "Comme Moi brings back memories of walks home from the gym, a girl with a dog, and conversations I never managed to start."
 
 tags = ["personal", "music"]
 +++

@@ -3,6 +3,7 @@ title = "عصر شاشات الظلام"
 date = "2026-10-01T22:05:00+02:00"
 slug = "the-new-dark-ages"
 tags = ["personal", "reading", "arabic"]
+description = "تأملات في كتاب The New Dark Ages: إزاي الفيديوهات القصيرة بتأثر على تركيزنا وفهمنا للمكتوب، وليه محتاجين نرجع نقرأ."
 +++
 
 في كتاب لم يُطرح بعد في الاسواق عزيزي مستخدم الفيسبوك اسمه [The new dark ages](https://www.penguinrandomhouse.com/books/829140/the-new-dark-ages-by-james-marriott/). ممكن تعملُّه preorder و يوصلك لما ينزل. لقيته علي [Audible](https://www.audible.com/pd/The-New-Dark-Ages-Audiobook/B0GZ7GVTSV) نسخة كتاب مسموع بصوت الكاتب نفسه .. و هو في الحقيقة كتاب متميز و بيقول كلام صادم.

@@ -1,7 +1,7 @@
 +++
 title = "On the internet conquest of happiness"
 date = 2022-01-02T00:00:01Z
-description = "Reflection on the internet as a mean to achieve happiness inspired by the book 'The conquest of happiness' by Bertrand Russel"
+description = "Reflections on finding like-minded people online, the loneliness of passive browsing, and the need to participate rather than only consume."
 
 tags = ["thoughts", "philosophy", "personal", "books", "reading"]
 +++

@@ -3,6 +3,7 @@ title: "A train hopping trip"
 date: 2024-05-31T12:17:40+02:00
 tags: ["travel", "personal", "trains"]
 draft: false
+description: "Planning a long-awaited journey across six European countries, using sleeper trains at night and exploring cities by day."
 ---
 
 ## A long awaited trip

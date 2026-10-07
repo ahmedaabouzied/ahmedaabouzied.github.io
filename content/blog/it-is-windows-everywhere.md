@@ -1,7 +1,7 @@
 +++
 title = "It's windows all over (a song)"
 date = 2023-06-21T01:00:00.226Z
-description = "A tranlation of a nice Arabic Egyptian song"
+description = "An English translation of Mohamed Mounir’s Shababeik, with background on the song and its poet, Magdy Naguib."
 
 tags = ["personal", "music", "song_translation"]
 +++
