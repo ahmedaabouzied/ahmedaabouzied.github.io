@@ -22,7 +22,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --gc --minify --enableGitInfo -b https://aabouzied-blog.pages.dev/
+        run: hugo --gc --minify --enableGitInfo -b https://blog.aabouzied.com/
         env:
           HUGO_ENV: production
 
